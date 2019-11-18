@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 184158941}
   - component: {fileID: 184158940}
   - component: {fileID: 184158939}
+  - component: {fileID: 184158942}
   m_Layer: 0
   m_Name: Letters
   m_TagString: Letters
@@ -150,11 +151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3c88c8bd8f3e441af4c5d5cb51341a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateSpawn: 2
+  rateSpawn: 0.6
   prefab:
   - {fileID: 184158938}
   list: []
-  maxObjects: 1
+  letterLife: 5
   sprite1: {fileID: -425995913362149430, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
   sprite2: {fileID: 2304412477376101311, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
   sprite3: {fileID: 4939210158302793225, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
@@ -266,6 +267,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &184158942
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184158938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.42, y: 1.42, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &592632159
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70095d1dfa508ba4c90f56a43ce7accd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialTime: 20
+  initialTime: 49.03
   currentTime: 0
   isTimeOver: 0
 --- !u!114 &1389569696
@@ -1361,6 +1375,7 @@ GameObject:
   - component: {fileID: 2026829711}
   - component: {fileID: 2026829710}
   - component: {fileID: 2026829709}
+  - component: {fileID: 2026829714}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1454,3 +1469,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2026829714
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026829708}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

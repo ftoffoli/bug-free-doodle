@@ -8,20 +8,22 @@ public class SpawnLetters : MonoBehaviour
     public float rateSpawn;
     public List<GameObject> prefab;
     public List<GameObject> list;
-    public int maxObjects;
+    public float letterLife;
     public Sprite sprite1, sprite2, sprite3, sprite4, sprite5, sprite6, sprite7, sprite8, sprite9, sprite10, sprite11,
                   sprite12, sprite13, sprite14, sprite15, sprite16, sprite17, sprite18, sprite19, sprite20, sprite21,
                   sprite22, sprite23, sprite24, sprite25, sprite26;
 
     private SpriteRenderer spriteRenderer;
-    private int letter;
     private float createRateSpawn;
+    private int letter;
     private bool active = true;
-
-
+    private bool last = true;
+    private GameObject temp;
+    
+    
     void Start()
     {
-
+        
     }
 
     /*  When the timer achieves the currentRateSpawn, 
@@ -31,13 +33,19 @@ public class SpawnLetters : MonoBehaviour
     void Update()
     {
         createRateSpawn += Time.deltaTime;
+        if(name=="letter")
+            Destroy(gameObject, letterLife);
         if (createRateSpawn > rateSpawn)
         {
             createRateSpawn = 0;
-            if(active==true)
+            if (active == true)
+            {
                 spawn();
+                
+            }
             active = false;
         }
+         //pretty sure this will destroy it after 5 seconds.
     }
 
 
@@ -45,20 +53,17 @@ public class SpawnLetters : MonoBehaviour
      * sprite calling the method ChangeSprite
      * */
     private void spawn()
-    {
-        GameObject temp;
-        list.Clear();
+    { 
         temp = Instantiate(prefab[0]) as GameObject;
-        list.Add(temp);
+        temp.name = "letter";
         if (temp != null)
         {
             changeSprite(temp);
-            temp.transform.position = new Vector3(Random.RandomRange(-10,10), Random.RandomRange(-3, 5), transform.position.z);
+            temp.transform.position = new Vector3(Random.Range(-10,10), Random.Range(-3, 5), transform.position.z);
             temp.SetActive(true);
         }
+        last = false;
     }
-
-
 
     /* Randomize the letter and set the specific sprite for each letter
      * */
@@ -120,5 +125,11 @@ public class SpawnLetters : MonoBehaviour
             temp.GetComponent<SpriteRenderer>().sprite = sprite26;
     }
 
+    private void OnTriggerEnter()
+    {
+        if (last == false)
+            Destroy(gameObject);
+    }
 
 }
+
