@@ -8,10 +8,12 @@ public class TimerController : MonoBehaviour
     public float initialTime = 30f;
     public float currentTime;
     public bool isTimeOver = false;
+    public bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         //Sets current time as the initial time
         currentTime = initialTime;
     }
@@ -20,7 +22,7 @@ public class TimerController : MonoBehaviour
     void Update()
     {
         //Checks if there is available time
-        if(currentTime <= 0)
+        if(currentTime < 1)
         {
             isTimeOver = true;
         }
