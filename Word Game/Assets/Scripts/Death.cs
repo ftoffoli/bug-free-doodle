@@ -27,10 +27,10 @@ public class Death : MonoBehaviour
         //Checks if the time is over
         if(timerControllerScript.isTimeOver)
         {
-            //Changes to Death message
-            message.text = "Your Time is Up";
             //Display the Death panel
             panel.gameObject.SetActive(true);
+            //Changes to Death message
+            message.text = "Your Time is Up";
             //Pause the time
             Time.timeScale = 0f;
         }
