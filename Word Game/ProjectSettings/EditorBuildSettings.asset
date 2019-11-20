@@ -9,12 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu Scene.unity
     guid: cf6340a1c4f47fa4189a3c5c637ae9f0
   - enabled: 1
-<<<<<<< Updated upstream
-=======
     path: Assets/Scenes/My Scene.unity
     guid: 23a475e860676ee4ead2d7643d90f4c1
   - enabled: 1
->>>>>>> Stashed changes
     path: Assets/Scenes/Dylon's Scene.unity
     guid: 2e4a07399708c0a4e8df24019f7a94bc
   m_configObjects: {}

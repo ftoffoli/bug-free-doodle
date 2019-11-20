@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class SpawnLetters : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class SpawnLetters : MonoBehaviour
     private bool last = true;
     private GameObject temp;
     private GameObject word;
+    public Text stack;
+    private string stackString;
 
     void Start()
     {
@@ -67,8 +70,85 @@ public class SpawnLetters : MonoBehaviour
         if (last == true) { 
             spawn();
         }
+
+        checkLenghtAndAdd();
         Destroy(gameObject);
-        //addLetterToStack();
+
+        //letterBlocks(gameObject.GetComponent.spriteRenderer);
+    }
+
+    private void checkLenghtAndAdd()
+    {
+        stackString = stack.text.ToString();
+        if (stackString.Length == 10)
+        {
+            /*stackString.Substring(1, stackString.Length - 1);
+            stack.text.Substring(1, stackString.Length - 1);
+            addLetterToStack();*/
+            
+        }
+        else
+        {
+            addLetterToStack();
+        }
+            
+    }
+
+    //Add the letter of the collision to the letter stack
+    private void addLetterToStack()
+    {
+        if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[0])
+            stack.text += "a";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[1])
+            stack.text += "b";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[2])
+            stack.text += "c";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[3])
+            stack.text += "d";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[4])
+            stack.text += "e";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[5])
+            stack.text += "f";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[6])
+            stack.text += "g";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[7])
+            stack.text += "h";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[8])
+            stack.text += "i";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[9])
+            stack.text += "j";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[10])
+            stack.text += "k";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[11])
+            stack.text += "l";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[12])
+            stack.text += "m";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[13])
+            stack.text += "n";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[14])
+            stack.text += "o";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[15])
+            stack.text += "p";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[16])
+            stack.text += "q";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[17])
+            stack.text += "r";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[18])
+            stack.text += "s";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[19])
+            stack.text += "t";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[20])
+            stack.text += "u";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[21])
+            stack.text += "v";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[22])
+            stack.text += "w";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[23])
+            stack.text += "x";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[24])
+            stack.text += "y";
+        else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[25])
+            stack.text += "z";
     }
 }
 
