@@ -231,7 +231,7 @@ MonoBehaviour:
   prefab:
   - {fileID: 184158938}
   list: []
-  maxObjects: 1
+  letterLife: 2
   sprite1: {fileID: -425995913362149430, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
   sprite2: {fileID: 2304412477376101311, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
   sprite3: {fileID: 4939210158302793225, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
