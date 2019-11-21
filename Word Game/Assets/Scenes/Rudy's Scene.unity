@@ -232,53 +232,8 @@ MonoBehaviour:
   - {fileID: 184158938}
   list: []
   letterLife: 2
-  sprite1: {fileID: -425995913362149430, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
-  sprite2: {fileID: 2304412477376101311, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
-  sprite3: {fileID: 4939210158302793225, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
-  sprite4: {fileID: 2998490070800472007, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
-  sprite5: {fileID: -4479338341004084719, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite6: {fileID: -5997517502634537899, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite7: {fileID: 1671874023668392819, guid: a40860539a75e284cbbf3e4171e75312, type: 3}
-  sprite8: {fileID: -2772083927121017137, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite9: {fileID: -2642023953887716003, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite10: {fileID: 1691466138856397902, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite11: {fileID: 5949368682610106806, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite12: {fileID: 1108870331674003538, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite13: {fileID: 5059402756318148790, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite14: {fileID: -2704611688130657760, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite15: {fileID: -6329860329445972959, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite16: {fileID: 8997811152243715195, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite17: {fileID: 4560248401929370746, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite18: {fileID: 3830951834634592173, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite19: {fileID: 1203490100866207061, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite20: {fileID: 4689423540459292977, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite21: {fileID: -3642959176838595215, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite22: {fileID: -1233047954448688839, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite23: {fileID: -7718449298817273229, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite24: {fileID: -7718449298817273229, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite25: {fileID: 4597242363245698359, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
-  sprite26: {fileID: 1951534038693420353, guid: a40860539a75e284cbbf3e4171e75312,
-    type: 3}
+  spriteSelection: []
+  stack: {fileID: 363206577}
 --- !u!212 &184158940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -337,7 +292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184158938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.77, y: 0, z: 0}
+  m_LocalPosition: {x: 18, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -420,6 +375,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340482536}
   m_CullTransparentMesh: 0
+--- !u!1 &363206576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363206579}
+  - component: {fileID: 363206578}
+  - component: {fileID: 363206577}
+  m_Layer: 5
+  m_Name: StackedLetters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &363206577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363206576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &363206578
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363206576}
+  m_CullTransparentMesh: 0
+--- !u!224 &363206579
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363206576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1262595263}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -289.8, y: 95.3}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &592632159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1215,7 @@ RectTransform:
   - {fileID: 1514808951}
   - {fileID: 860697479}
   - {fileID: 1313339319}
+  - {fileID: 363206579}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1332,6 +1365,7 @@ GameObject:
   - component: {fileID: 1389569695}
   - component: {fileID: 1389569693}
   - component: {fileID: 1389569697}
+  - component: {fileID: 1389569696}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -1382,6 +1416,21 @@ MonoBehaviour:
   currentTime: 0
   isTimeOver: 0
   isPaused: 0
+--- !u!114 &1389569696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389569692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93be429f11b07ac4a9a25b2cd281a237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordsCSV: {fileID: 0}
+  testText: {fileID: 0}
+  wordsArray: []
 --- !u!114 &1389569697
 MonoBehaviour:
   m_ObjectHideFlags: 0
