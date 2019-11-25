@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
+
 public class SpawnLetters : MonoBehaviour
 {
 
     public float rateSpawn;
     public List<GameObject> prefab;
     public List<GameObject> list;
+    public List<GameObject> stackList;
     public float letterLife;
     public List<Sprite> spriteSelection;
 
@@ -21,6 +23,7 @@ public class SpawnLetters : MonoBehaviour
     private GameObject word;
     public Text stack;
     private string stackString;
+    private int letterPosition = 99;
 
     void Start()
     {
@@ -30,7 +33,6 @@ public class SpawnLetters : MonoBehaviour
     /*  When the timer achieves the currentRateSpawn, 
         the method spawn is called and the GameObject is setted as inactive
         Doing it, the GameObject will not be duplicated*/
-
     void Update()
     {
         createRateSpawn += Time.deltaTime;
@@ -65,27 +67,26 @@ public class SpawnLetters : MonoBehaviour
     }
 
     //Destroy the Letter but first it checks if it's the last one. If so, before destroying creates another GameObject.
+    //In this method we get the proper Sprite that will appear
     private void OnTriggerEnter()
     {
         if (last == true) { 
             spawn();
         }
-
+        letterPosition = int.Parse(gameObject.GetComponent<SpriteRenderer>().sprite.name.Substring(8));
         checkLenghtAndAdd();
         Destroy(gameObject);
-
-        //letterBlocks(gameObject.GetComponent.spriteRenderer);
     }
 
+    //Add the letter that collided into the stack and check the length of it
     private void checkLenghtAndAdd()
     {
         stackString = stack.text.ToString();
         if (stackString.Length == 10)
         {
-            /*stackString.Substring(1, stackString.Length - 1);
-            stack.text.Substring(1, stackString.Length - 1);
-            addLetterToStack();*/
-            
+            stackString = stackString.Substring(1, stackString.Length - 1);
+            stack.text = stackString;
+            addLetterToStack();
         }
         else
         {
@@ -149,6 +150,26 @@ public class SpawnLetters : MonoBehaviour
             stack.text += "y";
         else if (gameObject.GetComponent<SpriteRenderer>().sprite == spriteSelection[25])
             stack.text += "z";
+        stackToSprite(stackString.Length);
+    }
+
+    //Parei aqui
+    private void stackToSprite(int position)
+    {
+        if (stackString.Length == 9)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                if(i!=9)
+                    stackList[i].GetComponent<SpriteRenderer>().sprite = stackList[i + 1].GetComponent<SpriteRenderer>().sprite;
+                else
+                    stackList[9].GetComponent<SpriteRenderer>().sprite = spriteSelection[letterPosition];
+            }
+        }
+        else
+        {
+            stackList[position].GetComponent<SpriteRenderer>().sprite = spriteSelection[letterPosition];
+        }
     }
 }
 
