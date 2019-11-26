@@ -25,9 +25,22 @@ public class SpawnLetters : MonoBehaviour
     private string stackString;
     private int letterPosition = 99;
 
+    /*
+     * Posicao 0 - 4 ->vogais. 
+     * Posição 5-6 -> S, R, N, D, M. 
+     * Posição 7-8 -> T, C, L, P, V, G, H, Q, B, F
+     * Posição 9 -> Z, J, X, K, W*/
+    private int[] weight = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    private int[] group1 = { 0, 4, 8, 14, 20 };
+    private int[] group2 = { 3, 12, 13, 17, 18 };
+    private int[] group3 = { 1, 2, 5, 6, 7, 11, 15, 16, 19, 21 };
+    private int[] group4 = { 9, 10, 22, 23, 24, 25 };
+    private int tempWeight;
+
     void Start()
     {
-
+        
+        
     }
 
     /*  When the timer achieves the currentRateSpawn, 
@@ -51,6 +64,7 @@ public class SpawnLetters : MonoBehaviour
 
 
     /* Create a temp GameObject, spawn it a random position and change the sprite
+     * here is where we give importance to one group of words
         * */
     private void spawn()
     { 
@@ -58,8 +72,28 @@ public class SpawnLetters : MonoBehaviour
         temp.name = "letter";
         if (temp != null)
         {
-            letter = Random.Range(1, 26);
-            temp.GetComponent<SpriteRenderer>().sprite = spriteSelection[letter - 1];
+            tempWeight = Random.Range(0, 10);
+            if (tempWeight >= 0 && tempWeight <= 4)
+            {
+                tempWeight = Random.Range(0,4);
+                letter = group1[tempWeight];
+            }
+            else if (tempWeight == 5 || tempWeight == 6 || tempWeight == 7)
+            {
+                tempWeight = Random.Range(0, 4);
+                letter = group2[tempWeight];
+            }
+            else if (tempWeight == 8 || tempWeight == 9)
+            {
+                tempWeight = Random.Range(0, 9);
+                letter = group3[tempWeight];
+            }
+            else if (tempWeight == 10)
+            {
+                tempWeight = Random.Range(0, 5);
+                letter = group4[tempWeight];
+            }
+            temp.GetComponent<SpriteRenderer>().sprite = spriteSelection[letter];
             temp.transform.position = new Vector3(Random.Range(-10,10), Random.Range(-3, 5), transform.position.z);
             temp.SetActive(true);
         }
@@ -153,23 +187,19 @@ public class SpawnLetters : MonoBehaviour
         stackToSprite(stackString.Length);
     }
 
-    //Parei aqui
+    //Update the Boxes with the letter
     private void stackToSprite(int position)
     {
-        if (stackString.Length == 9)
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                if(i!=9)
-                    stackList[i].GetComponent<SpriteRenderer>().sprite = stackList[i + 1].GetComponent<SpriteRenderer>().sprite;
-                else
-                    stackList[9].GetComponent<SpriteRenderer>().sprite = spriteSelection[letterPosition];
-            }
-        }
-        else
-        {
-            stackList[position].GetComponent<SpriteRenderer>().sprite = spriteSelection[letterPosition];
-        }
+        stackList[0].GetComponent<SpriteRenderer>().sprite = stackList[1].GetComponent<SpriteRenderer>().sprite;
+        stackList[1].GetComponent<SpriteRenderer>().sprite = stackList[2].GetComponent<SpriteRenderer>().sprite;
+        stackList[2].GetComponent<SpriteRenderer>().sprite = stackList[3].GetComponent<SpriteRenderer>().sprite;
+        stackList[3].GetComponent<SpriteRenderer>().sprite = stackList[4].GetComponent<SpriteRenderer>().sprite;
+        stackList[4].GetComponent<SpriteRenderer>().sprite = stackList[5].GetComponent<SpriteRenderer>().sprite;
+        stackList[5].GetComponent<SpriteRenderer>().sprite = stackList[6].GetComponent<SpriteRenderer>().sprite;
+        stackList[6].GetComponent<SpriteRenderer>().sprite = stackList[7].GetComponent<SpriteRenderer>().sprite;
+        stackList[7].GetComponent<SpriteRenderer>().sprite = stackList[8].GetComponent<SpriteRenderer>().sprite;
+        stackList[8].GetComponent<SpriteRenderer>().sprite = stackList[9].GetComponent<SpriteRenderer>().sprite;
+        stackList[9].GetComponent<SpriteRenderer>().sprite = spriteSelection[letterPosition];
     }
 }
 
