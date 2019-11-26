@@ -9,25 +9,24 @@ public class LoadData : MonoBehaviour
     [SerializeField]
     private TextAsset wordsCSV;
 
-    [SerializeField]
-    private Text testText;
-
-    public string[] wordsArray;
+    private string[] wordsArray;
 
     // Start is called before the first frame update
     void Start()
     {
         //Load words from file
-        loadFile();
+        //loadFile();
     }
 
     //Method to load words from file
-    private void loadFile()
+    public string[] LoadFile()
     {
         //Creates separator, to split the words from the CSV file
         char separator = ',';
         
         //Splits the CSV file in an array
         wordsArray = wordsCSV.text.Split(separator);
+
+        return wordsArray;
     }
 }
