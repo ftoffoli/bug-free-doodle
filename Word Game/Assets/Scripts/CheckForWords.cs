@@ -44,11 +44,12 @@ public class CheckForWords : MonoBehaviour
 
     private bool CheckForWord()
     {
-        string matchedLetters = "";
-        stackedLetters = input.text.ToCharArray();
+        string matchedLetters;
 
         foreach (string str in wordsArray) 
         {
+            matchedLetters = "";
+            stackedLetters = input.text.ToCharArray();  
             word = str.ToCharArray();
 
             for (int counter = 0; counter < word.Length; counter++)
@@ -64,11 +65,6 @@ public class CheckForWords : MonoBehaviour
                 }
             }
 
-            /*char[] sortedLetters = matchedLetters.ToCharArray();
-            Array.Sort<char>(word);
-            Array.Sort<char>(sortedLetters);*/
-
-            //if (input.text.Contains(str))
             if(matchedLetters.Equals(str))
             {
                 return true;
