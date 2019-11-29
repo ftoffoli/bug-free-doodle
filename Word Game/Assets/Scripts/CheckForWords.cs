@@ -6,11 +6,13 @@ using System;
 
 public class CheckForWords : MonoBehaviour
 {
-    public Toggle toggle;
-    public InputField input;
+    //public Toggle toggle;
+    //public InputField input;
 
     [SerializeField]
     private string[] wordsArray;
+
+    public Text lettersStack;
 
     private char[] word;
     private char[] stackedLetters;
@@ -27,19 +29,20 @@ public class CheckForWords : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!input.text.Equals(temp))
+        if (!lettersStack.text.Equals(temp))
         {
             if (CheckForWord())
             {
-                toggle.isOn = true;
+                //toggle.isOn = true;
+                Debug.Log("yes");
             }
             else
             {
-                toggle.isOn = false;
+                //toggle.isOn = false;
             }
         }
 
-        temp = input.text;
+        temp = lettersStack.text;
     }
 
     private bool CheckForWord()
@@ -49,7 +52,7 @@ public class CheckForWords : MonoBehaviour
         foreach (string str in wordsArray) 
         {
             matchedLetters = "";
-            stackedLetters = input.text.ToCharArray();  
+            stackedLetters = lettersStack.text.ToCharArray();  
             word = str.ToCharArray();
 
             for (int counter = 0; counter < word.Length; counter++)
