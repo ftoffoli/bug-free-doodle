@@ -16,7 +16,8 @@ public class CheckForWords : MonoBehaviour
 
     private char[] word;
     private char[] stackedLetters;
-    
+    private string matchedLetters;
+
 
     string temp;
 
@@ -33,8 +34,9 @@ public class CheckForWords : MonoBehaviour
         {
             if (CheckForWord())
             {
-                //toggle.isOn = true;
                 Debug.Log("yes");
+
+                removeLettersFromStack();
             }
             else
             {
@@ -47,7 +49,7 @@ public class CheckForWords : MonoBehaviour
 
     private bool CheckForWord()
     {
-        string matchedLetters;
+        //string matchedLetters
 
         foreach (string str in wordsArray) 
         {
@@ -75,5 +77,17 @@ public class CheckForWords : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void removeLettersFromStack()
+    {
+        //Convert char[] to string
+        string removedLetters = new string(stackedLetters);
+
+        //Remove spaces from string
+        removedLetters = removedLetters.Replace(" ", "");
+
+        //Replace stack with removed letters
+        lettersStack.text = removedLetters;
     }
 }
