@@ -657,6 +657,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6328146045336354462, guid: 590cb7824ac9e1749b6257acd3d3ba60,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590cb7824ac9e1749b6257acd3d3ba60, type: 3}
 --- !u!1 &1077113670 stripped
@@ -808,6 +813,11 @@ PrefabInstance:
       propertyPath: lettersStack
       value: 
       objectReference: {fileID: 702708454}
+    - target: {fileID: 1156993911173062194, guid: e3c8bf8694b2daa46b6ab9c622b2984f,
+        type: 3}
+      propertyPath: lettersObject
+      value: 
+      objectReference: {fileID: 1381372476}
     - target: {fileID: 1156993911173062199, guid: e3c8bf8694b2daa46b6ab9c622b2984f,
         type: 3}
       propertyPath: m_Name
@@ -825,6 +835,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6328146045391818424, guid: 590cb7824ac9e1749b6257acd3d3ba60,
     type: 3}
   m_PrefabInstance: {fileID: 1048327869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1381372476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3173099675644448732, guid: 1904c4cca702b9841a30119fee7b6072,
+    type: 3}
+  m_PrefabInstance: {fileID: 268226385}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434257037 stripped
 GameObject:

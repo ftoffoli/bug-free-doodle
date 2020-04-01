@@ -13,6 +13,8 @@ public class CheckForWords : MonoBehaviour
     private string[] wordsArray;
 
     public Text lettersStack;
+    public GameObject lettersObject;
+    private SpawnLetters spawnLetterScript;
 
     private char[] word;
     private char[] stackedLetters;
@@ -25,6 +27,8 @@ public class CheckForWords : MonoBehaviour
     void Start()
     {
         wordsArray = this.GetComponent<LoadData>().LoadFile();
+
+        spawnLetterScript = lettersObject.GetComponent<SpawnLetters>();
     }
 
     // Update is called once per frame
@@ -34,9 +38,11 @@ public class CheckForWords : MonoBehaviour
         {
             if (CheckForWord())
             {
-                Debug.Log("yes");
-
+                //Debug.Log("yes");
+                
                 removeLettersFromStack();
+                
+                spawnLetterScript.updateStack();
             }
             else
             {

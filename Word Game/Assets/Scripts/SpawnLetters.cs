@@ -187,6 +187,88 @@ public class SpawnLetters : MonoBehaviour
         stackToSprite(stackString.Length);
     }
 
+    public void updateStack()
+    {
+        Debug.Log(stack.text);
+
+        char[] newStackArray = stack.text.ToCharArray();
+
+        //Clear Sprites from stack list
+        for (int counter = 0; counter < stackList.Count; counter++)
+        {
+            stackList[counter].GetComponent<SpriteRenderer>().sprite = null;
+        }
+
+        for (int counter = 9; counter >= 0; counter--)
+        {
+            for (int inCounter = newStackArray.Length; inCounter > 0; inCounter--)
+            {
+                if (newStackArray[inCounter].ToString().Equals("a"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[0];
+                else if (newStackArray[inCounter].ToString() == "b")
+                {
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[1];
+                    Debug.Log("B");
+                }
+                else if (newStackArray[inCounter].Equals("c"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[2];
+                else if (newStackArray[inCounter].Equals("d"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[3];
+                else if (newStackArray[inCounter].Equals("e"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[4];
+                else if (newStackArray[inCounter].Equals("f"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[5];
+                else if (newStackArray[inCounter].Equals("g"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[6];
+                else if (newStackArray[inCounter].Equals("h"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[7];
+                else if (newStackArray[inCounter].ToString() == "i")
+                {
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[8];
+                    Debug.Log("I");
+                }
+                else if (newStackArray[inCounter].Equals("j"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[9];
+                else if (newStackArray[inCounter].Equals("k"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[10];
+                else if (newStackArray[inCounter].Equals("l"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[11];
+                else if (newStackArray[inCounter].Equals("m"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[12];
+                else if (newStackArray[inCounter].Equals("n"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[13];
+                else if (newStackArray[inCounter].Equals("o"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[14];
+                else if (newStackArray[inCounter].Equals("p"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[15];
+                else if (newStackArray[inCounter].Equals("q"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[16];
+                else if (newStackArray[inCounter].Equals("r"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[17];
+                else if (newStackArray[inCounter].Equals("s"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[18];
+                else if (newStackArray[inCounter].Equals("t"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[19];
+                else if (newStackArray[inCounter].Equals("u"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[20];
+                else if (newStackArray[inCounter].Equals("v"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[21];
+                else if (newStackArray[inCounter].Equals("x"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[22];
+                else if (newStackArray[inCounter].Equals("w"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[23];
+                else if (newStackArray[inCounter].Equals("y"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[24];
+                else if (newStackArray[inCounter].Equals("z"))
+                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[25];
+
+                
+                else
+                Debug.Log("fudeu");
+            }
+        }
+    }
+
     //Update the Boxes with the letter
     private void stackToSprite(int position)
     {
