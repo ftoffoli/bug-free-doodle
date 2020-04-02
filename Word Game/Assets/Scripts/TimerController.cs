@@ -7,8 +7,12 @@ public class TimerController : MonoBehaviour
     //Variables
     public float initialTime = 30f;
     public float currentTime;
+    public float totalTime;
     public bool isTimeOver = false;
     public bool isPaused = false;
+
+    private PlayerPreferences playerPrefsScript;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +20,9 @@ public class TimerController : MonoBehaviour
         Time.timeScale = 1f;
         //Sets current time as the initial time
         currentTime = initialTime;
+        totalTime = initialTime;
+
+        playerPrefsScript = this.GetComponent<PlayerPreferences>();
     }
 
     // Update is called once per frame
@@ -25,11 +32,18 @@ public class TimerController : MonoBehaviour
         if(currentTime < 1)
         {
             isTimeOver = true;
+            playerPrefsScript.SaveScore(totalTime - 1);
         }
         //If there is time available, keep decreasing it
         else if(!isTimeOver)
         {
             currentTime -= Time.deltaTime;
         }
+    }
+
+    public void addTime(float timeToAdd)
+    {
+        currentTime += timeToAdd;
+        totalTime += timeToAdd;
     }
 }

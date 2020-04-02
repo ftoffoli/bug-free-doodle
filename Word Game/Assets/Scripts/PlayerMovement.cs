@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
                 //Creates a vector to store the mouse position relative to the camera view
                 Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 //Keep Z axis centered
-                mousePos.z = 0f;
+                mousePos.z = 64f;
 
                 //Moves the player towards the mouse
                 this.transform.position = Vector2.MoveTowards(this.transform.position,

@@ -94,7 +94,7 @@ public class SpawnLetters : MonoBehaviour
                 letter = group4[tempWeight];
             }
             temp.GetComponent<SpriteRenderer>().sprite = spriteSelection[letter];
-            temp.transform.position = new Vector3(Random.Range(-10,10), Random.Range(-3, 5), transform.position.z);
+            temp.transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-3, 4.3f), transform.position.z);
             temp.SetActive(true);
         }
         last = false;
@@ -199,72 +199,171 @@ public class SpawnLetters : MonoBehaviour
             stackList[counter].GetComponent<SpriteRenderer>().sprite = null;
         }
 
-        for (int counter = 9; counter >= 0; counter--)
+        for (int counter = 9; counter >= (10 - newStackArray.Length); counter--)
         {
-            for (int inCounter = newStackArray.Length; inCounter > 0; inCounter--)
+            for (int inCounter = newStackArray.Length - 1; inCounter >= 0; inCounter--)
             {
-                if (newStackArray[inCounter].ToString().Equals("a"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[0];
-                else if (newStackArray[inCounter].ToString() == "b")
+                if (newStackArray[inCounter] != ' ')
                 {
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[1];
-                    Debug.Log("B");
-                }
-                else if (newStackArray[inCounter].Equals("c"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[2];
-                else if (newStackArray[inCounter].Equals("d"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[3];
-                else if (newStackArray[inCounter].Equals("e"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[4];
-                else if (newStackArray[inCounter].Equals("f"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[5];
-                else if (newStackArray[inCounter].Equals("g"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[6];
-                else if (newStackArray[inCounter].Equals("h"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[7];
-                else if (newStackArray[inCounter].ToString() == "i")
-                {
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[8];
-                    Debug.Log("I");
-                }
-                else if (newStackArray[inCounter].Equals("j"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[9];
-                else if (newStackArray[inCounter].Equals("k"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[10];
-                else if (newStackArray[inCounter].Equals("l"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[11];
-                else if (newStackArray[inCounter].Equals("m"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[12];
-                else if (newStackArray[inCounter].Equals("n"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[13];
-                else if (newStackArray[inCounter].Equals("o"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[14];
-                else if (newStackArray[inCounter].Equals("p"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[15];
-                else if (newStackArray[inCounter].Equals("q"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[16];
-                else if (newStackArray[inCounter].Equals("r"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[17];
-                else if (newStackArray[inCounter].Equals("s"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[18];
-                else if (newStackArray[inCounter].Equals("t"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[19];
-                else if (newStackArray[inCounter].Equals("u"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[20];
-                else if (newStackArray[inCounter].Equals("v"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[21];
-                else if (newStackArray[inCounter].Equals("x"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[22];
-                else if (newStackArray[inCounter].Equals("w"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[23];
-                else if (newStackArray[inCounter].Equals("y"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[24];
-                else if (newStackArray[inCounter].Equals("z"))
-                    stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[25];
+                    if (newStackArray[inCounter].ToString() == "a")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[0];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "b")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[1];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "c")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[2];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "d")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[3];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "e")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[4];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "f")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[5];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "g")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[6];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "h")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[7];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "i")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[8];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "j")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[9];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "k")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[10];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "l")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[11];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "m")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[12];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "n")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[13];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "o")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[14];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "p")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[15];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "q")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[16];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "r")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[17];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "s")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[18];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "t")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[19];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "u")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[20];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "v")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[21];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "x")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[22];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "w")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[23];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "y")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[24];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
+                    else if (newStackArray[inCounter].ToString() == "z")
+                    {
+                        stackList[counter].GetComponent<SpriteRenderer>().sprite = spriteSelection[25];
+                        newStackArray[inCounter] = ' ';
+                        break;
+                    }
 
-                
-                else
-                Debug.Log("fudeu");
+                    
+                }
             }
         }
     }

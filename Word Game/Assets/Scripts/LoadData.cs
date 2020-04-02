@@ -22,8 +22,9 @@ public class LoadData : MonoBehaviour
     public string[] LoadFile()
     {
         //Creates separator, to split the words from the CSV file
-        char separator = ',';
-        
+        //char separator = ',';
+        char separator = '\n';
+
         //Splits the CSV file in an array
         wordsArray = wordsCSV.text.Split(separator);
 

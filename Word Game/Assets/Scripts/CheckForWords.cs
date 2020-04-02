@@ -15,10 +15,12 @@ public class CheckForWords : MonoBehaviour
     public Text lettersStack;
     public GameObject lettersObject;
     private SpawnLetters spawnLetterScript;
+    private TimerController timerControllerScript;
 
     private char[] word;
     private char[] stackedLetters;
     private string matchedLetters;
+    private int wordLength;
 
 
     string temp;
@@ -27,6 +29,7 @@ public class CheckForWords : MonoBehaviour
     void Start()
     {
         wordsArray = this.GetComponent<LoadData>().LoadFile();
+        timerControllerScript = this.GetComponent<TimerController>();
 
         spawnLetterScript = lettersObject.GetComponent<SpawnLetters>();
     }
@@ -38,11 +41,11 @@ public class CheckForWords : MonoBehaviour
         {
             if (CheckForWord())
             {
-                //Debug.Log("yes");
-                
                 removeLettersFromStack();
                 
                 spawnLetterScript.updateStack();
+
+                timerControllerScript.addTime(calculateTime());
             }
             else
             {
@@ -78,6 +81,8 @@ public class CheckForWords : MonoBehaviour
 
             if(matchedLetters.Equals(str))
             {
+                wordLength = matchedLetters.Length;
+                wordsArray[Array.IndexOf(wordsArray, str)] = "";
                 return true;
             }
         }
@@ -95,5 +100,18 @@ public class CheckForWords : MonoBehaviour
 
         //Replace stack with removed letters
         lettersStack.text = removedLetters;
+    }
+
+
+    private float calculateTime()
+    {
+        float timeToReturn = 0;
+
+        if(spawnLetterScript.rateSpawn > .2)
+        {
+            spawnLetterScript.rateSpawn *= .7f;
+        }
+
+        return timeToReturn = wordLength * 2;
     }
 }
