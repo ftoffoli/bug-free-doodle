@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectsController : MonoBehaviour
 {
     public GameObject[] objectsArray;
+    public float waitTime;
+    public bool memorized = false;
 
+    public Button pauseButton;
+    public GameObject panel;
+     
     // Start is called before the first frame update
     void Start()
     {
-        gameSetUp();
+        pauseButton.interactable = false;
+        panel.SetActive(true);
     }
 
     // Update is called once per frame
@@ -26,6 +33,17 @@ public class ObjectsController : MonoBehaviour
         }
     }
 
+    IEnumerator memorizeTime()
+    {
+        panel.SetActive(false);
+
+        yield return new WaitForSeconds(waitTime);
+        
+        gameSetUp();
+        memorized = true;
+        pauseButton.interactable = true;
+    }
+
     public void displayObject(string objName)
     {
         foreach (GameObject obj in objectsArray)
@@ -35,5 +53,10 @@ public class ObjectsController : MonoBehaviour
                obj.SetActive(true);
             }
         }
+    }
+
+    public void howToPlay()
+    {
+        StartCoroutine(memorizeTime());
     }
 }

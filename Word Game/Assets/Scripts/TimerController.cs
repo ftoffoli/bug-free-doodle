@@ -12,6 +12,7 @@ public class TimerController : MonoBehaviour
     public bool isPaused = false;
 
     private PlayerPreferences playerPrefsScript;
+    private ObjectsController objectsControllerScript;
 
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class TimerController : MonoBehaviour
         totalTime = initialTime;
 
         playerPrefsScript = this.GetComponent<PlayerPreferences>();
+        objectsControllerScript = this.GetComponent<ObjectsController>();
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class TimerController : MonoBehaviour
             playerPrefsScript.SaveScore(totalTime - 1);
         }
         //If there is time available, keep decreasing it
-        else if(!isTimeOver)
+        else if(!isTimeOver && objectsControllerScript.memorized)
         {
             currentTime -= Time.deltaTime;
         }

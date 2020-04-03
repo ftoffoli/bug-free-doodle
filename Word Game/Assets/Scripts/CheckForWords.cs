@@ -12,6 +12,7 @@ public class CheckForWords : MonoBehaviour
     [SerializeField]
     private string[] wordsArray;
 
+    public Text objectsList;
     public Text lettersStack;
     public GameObject lettersObject;
     private SpawnLetters spawnLetterScript;
@@ -34,6 +35,7 @@ public class CheckForWords : MonoBehaviour
         objectsControllerScript = this.GetComponent<ObjectsController>();
     
         spawnLetterScript = lettersObject.GetComponent<SpawnLetters>();
+        updateObjectsList(wordsArray);
     }
 
     // Update is called once per frame
@@ -66,8 +68,6 @@ public class CheckForWords : MonoBehaviour
             stackedLetters = lettersStack.text.ToCharArray();  
             word = str.ToCharArray();
 
-            Debug.Log(str);
-
             if(!str.Equals("+"))
             {
                 for (int counter = 0; counter < word.Length; counter++)
@@ -89,6 +89,9 @@ public class CheckForWords : MonoBehaviour
                 wordLength = matchedLetters.Length;
                 objectsControllerScript.displayObject(matchedLetters);
                 wordsArray[Array.IndexOf(wordsArray, str)] = "+";
+
+                updateObjectsList(wordsArray);
+
                 return true;
             }
         }
@@ -108,7 +111,6 @@ public class CheckForWords : MonoBehaviour
         lettersStack.text = removedLetters;
     }
 
-
     private float calculateTime()
     {
         float timeToReturn = 0;
@@ -118,6 +120,18 @@ public class CheckForWords : MonoBehaviour
             spawnLetterScript.rateSpawn *= .7f;
         }
 
-        return timeToReturn = wordLength * 2;
+        return timeToReturn = wordLength * 5;
+    }
+
+    private void updateObjectsList(string[] objectsArray)
+    {
+        objectsList.text = "";
+        foreach(string obj in objectsArray)
+        {
+            if (!obj.Equals("+"))
+            {
+                objectsList.text += obj + "  ";
+            }
+        }
     }
 }

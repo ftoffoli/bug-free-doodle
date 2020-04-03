@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class SpawnLetters : MonoBehaviour
 {
-
     public float rateSpawn;
     public List<GameObject> prefab;
     public List<GameObject> list;
@@ -25,6 +24,9 @@ public class SpawnLetters : MonoBehaviour
     private string stackString;
     private int letterPosition = 99;
 
+    public GameObject gameManager;
+    private ObjectsController objectsControllerScript;
+
     /*
      * Posicao 0 - 4 ->vogais. 
      * Posição 5-6 -> S, R, N, D, M. 
@@ -39,8 +41,7 @@ public class SpawnLetters : MonoBehaviour
 
     void Start()
     {
-        
-        
+        objectsControllerScript = gameManager.GetComponent<ObjectsController>();
     }
 
     /*  When the timer achieves the currentRateSpawn, 
@@ -51,7 +52,7 @@ public class SpawnLetters : MonoBehaviour
         createRateSpawn += Time.deltaTime;
         if(name=="letter")
             Destroy(gameObject, letterLife);
-        if (createRateSpawn > rateSpawn)
+        if (createRateSpawn > rateSpawn && objectsControllerScript.memorized)
         {
             createRateSpawn = 0;
             if (active == true)

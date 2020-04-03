@@ -12,6 +12,8 @@ public class Timer : MonoBehaviour
     private int minutes;
     private int seconds;
 
+    private ObjectsController objectsControllerScript;
+
     [SerializeField]
     private Text timer;
 
@@ -20,7 +22,8 @@ public class Timer : MonoBehaviour
     {
         //Gets hold of the necessary components
         timerControllerScript = this.GetComponent<TimerController>();
-        timer.text = timerControllerScript.initialTime.ToString();
+        //timer.text = timerControllerScript.initialTime.ToString();
+        objectsControllerScript = this.GetComponent<ObjectsController>();
     }
 
     // Update is called once per frame
@@ -28,7 +31,10 @@ public class Timer : MonoBehaviour
     {
         //Gets the updated current time
         currentTime = timerControllerScript.currentTime;
-        DisplayTime();
+        if(objectsControllerScript.memorized)
+        {
+            DisplayTime();
+        }
     }
 
     //Method to display the decreasing time
