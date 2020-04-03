@@ -1,1 +1,1 @@
-casa,bola,caneta,sim,celular,bandeira,joias,coisas,aaa
+casa,bola,caneta,sim,celular,bandeira,joias,coisas,aaa,a,e

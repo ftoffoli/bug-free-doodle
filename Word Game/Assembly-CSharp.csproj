@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CheckForWords.cs" />
     <Compile Include="Assets\Scripts\Death.cs" />
     <Compile Include="Assets\Scripts\LoadData.cs" />
+    <Compile Include="Assets\Scripts\ObjectsController.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerPreferences.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scripts\TimerController.cs" />
     <None Include="Assets\Resources\words_PtBR.txt" />
     <None Include="Assets\Resources\words_EN.txt" />
+    <None Include="Assets\Resources\QuartoDoVG.txt" />
     <None Include="Assets\Resources\wordsCSV.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/R Conde/Documents/Almost Games/bug-free-doodle/Word Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

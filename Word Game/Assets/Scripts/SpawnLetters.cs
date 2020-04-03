@@ -75,22 +75,22 @@ public class SpawnLetters : MonoBehaviour
             tempWeight = Random.Range(0, 10);
             if (tempWeight >= 0 && tempWeight <= 4)
             {
-                tempWeight = Random.Range(0,4);
+                tempWeight = Random.Range(0,5);
                 letter = group1[tempWeight];
             }
             else if (tempWeight == 5 || tempWeight == 6 || tempWeight == 7)
             {
-                tempWeight = Random.Range(0, 4);
+                tempWeight = Random.Range(0, 5);
                 letter = group2[tempWeight];
             }
             else if (tempWeight == 8 || tempWeight == 9)
             {
-                tempWeight = Random.Range(0, 9);
+                tempWeight = Random.Range(0, 10);
                 letter = group3[tempWeight];
             }
             else if (tempWeight == 10)
             {
-                tempWeight = Random.Range(0, 5);
+                tempWeight = Random.Range(0, 6);
                 letter = group4[tempWeight];
             }
             temp.GetComponent<SpriteRenderer>().sprite = spriteSelection[letter];
@@ -189,8 +189,6 @@ public class SpawnLetters : MonoBehaviour
 
     public void updateStack()
     {
-        Debug.Log(stack.text);
-
         char[] newStackArray = stack.text.ToCharArray();
 
         //Clear Sprites from stack list

@@ -16,6 +16,7 @@ public class CheckForWords : MonoBehaviour
     public GameObject lettersObject;
     private SpawnLetters spawnLetterScript;
     private TimerController timerControllerScript;
+    private ObjectsController objectsControllerScript;
 
     private char[] word;
     private char[] stackedLetters;
@@ -30,7 +31,8 @@ public class CheckForWords : MonoBehaviour
     {
         wordsArray = this.GetComponent<LoadData>().LoadFile();
         timerControllerScript = this.GetComponent<TimerController>();
-
+        objectsControllerScript = this.GetComponent<ObjectsController>();
+    
         spawnLetterScript = lettersObject.GetComponent<SpawnLetters>();
     }
 
@@ -58,31 +60,35 @@ public class CheckForWords : MonoBehaviour
 
     private bool CheckForWord()
     {
-        //string matchedLetters
-
         foreach (string str in wordsArray) 
         {
             matchedLetters = "";
             stackedLetters = lettersStack.text.ToCharArray();  
             word = str.ToCharArray();
 
-            for (int counter = 0; counter < word.Length; counter++)
+            Debug.Log(str);
+
+            if(!str.Equals("+"))
             {
-                for (int inCounter = 0; inCounter < stackedLetters.Length; inCounter++)
+                for (int counter = 0; counter < word.Length; counter++)
                 {
-                    if (word[counter].Equals(stackedLetters[inCounter]) && !stackedLetters.Equals(' '))
+                    for (int inCounter = 0; inCounter < stackedLetters.Length; inCounter++)
                     {
-                        matchedLetters += stackedLetters[inCounter];
-                        stackedLetters[inCounter] = ' ';
-                        break;
+                        if (word[counter].Equals(stackedLetters[inCounter]) && !stackedLetters.Equals(' '))
+                        {
+                            matchedLetters += stackedLetters[inCounter];
+                            stackedLetters[inCounter] = ' ';
+                            break;
+                        }
                     }
                 }
             }
 
-            if(matchedLetters.Equals(str))
+            if(matchedLetters.Equals(str.Trim()))
             {
                 wordLength = matchedLetters.Length;
-                wordsArray[Array.IndexOf(wordsArray, str)] = "";
+                objectsControllerScript.displayObject(matchedLetters);
+                wordsArray[Array.IndexOf(wordsArray, str)] = "+";
                 return true;
             }
         }
