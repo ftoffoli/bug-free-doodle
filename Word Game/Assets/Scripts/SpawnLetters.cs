@@ -30,13 +30,13 @@ public class SpawnLetters : MonoBehaviour
     /*
      * Posicao 0 - 4 ->vogais. 
      * Posição 5-6 -> S, R, N, D, M. 
-     * Posição 7-8 -> T, C, L, P, V, G, H, Q, B, F
-     * Posição 9 -> Z, J, X, K, W*/
+     * Posição 7-8 -> T, C, L, P, V, G, H, Q, B, F, J
+     * Posição 9 -> Z, X, K, W*/
     private int[] weight = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     private int[] group1 = { 0, 4, 8, 14, 20 };
     private int[] group2 = { 3, 12, 13, 17, 18 };
-    private int[] group3 = { 1, 2, 5, 6, 7, 11, 15, 16, 19, 21 };
-    private int[] group4 = { 9, 10, 22, 23, 24, 25 };
+    private int[] group3 = { 1, 2, 5, 6, 7, 9, 11, 15, 16, 19, 21 };
+    private int[] group4 = { 10, 22, 23, 24, 25 };
     private int tempWeight;
 
     void Start()
@@ -86,12 +86,12 @@ public class SpawnLetters : MonoBehaviour
             }
             else if (tempWeight == 8 || tempWeight == 9)
             {
-                tempWeight = Random.Range(0, 10);
+                tempWeight = Random.Range(0, 11);
                 letter = group3[tempWeight];
             }
             else if (tempWeight == 10)
             {
-                tempWeight = Random.Range(0, 6);
+                tempWeight = Random.Range(0, 5);
                 letter = group4[tempWeight];
             }
             temp.GetComponent<SpriteRenderer>().sprite = spriteSelection[letter];
