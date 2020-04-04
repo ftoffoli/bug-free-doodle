@@ -696,6 +696,7 @@ MonoBehaviour:
   - {fileID: 6965842211744511249}
   - {fileID: 4094717218476262462}
   - {fileID: 3701801378974256957}
+  - {fileID: 1813533531}
   waitTime: 10
   memorized: 0
   pauseButton: {fileID: 1234753849}
@@ -1619,6 +1620,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243928b4f100f4c4580489592a6606e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1813533531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1604424495439376643, guid: 3c2066f92d99ac8468dca637283fc9db,
+    type: 3}
+  m_PrefabInstance: {fileID: 2635990998472135795}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1884048579 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1420589652672154454, guid: a8873596413aed64d995013c51741a60,
@@ -1656,6 +1663,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1604424495439376643, guid: 3c2066f92d99ac8468dca637283fc9db,
+        type: 3}
+      propertyPath: m_Name
+      value: garrafa
+      objectReference: {fileID: 0}
     - target: {fileID: 6319965136189659462, guid: 3c2066f92d99ac8468dca637283fc9db,
         type: 3}
       propertyPath: m_Name
