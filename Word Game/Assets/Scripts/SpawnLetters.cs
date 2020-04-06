@@ -23,6 +23,7 @@ public class SpawnLetters : MonoBehaviour
     public Text stack;
     private string stackString;
     private int letterPosition = 99;
+    private bool isFree = true;
 
     public GameObject gameManager;
     private ObjectsController objectsControllerScript;
@@ -31,7 +32,7 @@ public class SpawnLetters : MonoBehaviour
      * Posicao 0 - 4 ->vogais. 
      * Posição 5-6 -> S, R, N, D, M. 
      * Posição 7-8 -> T, C, L, P, V, G, H, Q, B, F, J
-     * Posição 9 -> Z, X, K, W*/
+     * Posição 9 -> Z, X, K, Y, W*/
     private int[] weight = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     private int[] group1 = { 0, 4, 8, 14, 20 };
     private int[] group2 = { 3, 12, 13, 17, 18 };
@@ -73,7 +74,7 @@ public class SpawnLetters : MonoBehaviour
         temp.name = "letter";
         if (temp != null)
         {
-            tempWeight = Random.Range(0, 10);
+            tempWeight = Random.Range(0, 11);
             if (tempWeight >= 0 && tempWeight <= 4)
             {
                 tempWeight = Random.Range(0,5);
@@ -95,21 +96,39 @@ public class SpawnLetters : MonoBehaviour
                 letter = group4[tempWeight];
             }
             temp.GetComponent<SpriteRenderer>().sprite = spriteSelection[letter];
+
             temp.transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-3, 4.3f), transform.position.z);
-            temp.SetActive(true);
+
+            
+            var hitColliders = Physics.OverlapSphere(temp.transform.position, transform.localScale.x / 2);
+
+            Debug.Log(hitColliders.Length);
+
+            if (hitColliders.Length == 0)
+            {
+                temp.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("bateu");
+            }
+            
+            isFree = false;
         }
         last = false;
     }
 
     //Destroy the Letter but first it checks if it's the last one. If so, before destroying creates another GameObject.
     //In this method we get the proper Sprite that will appear
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
         if (last == true) { 
             spawn();
         }
+
         letterPosition = int.Parse(gameObject.GetComponent<SpriteRenderer>().sprite.name.Substring(8));
         checkLenghtAndAdd();
+        
         Destroy(gameObject);
     }
 

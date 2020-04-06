@@ -140,6 +140,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3173099675644448728, guid: 1904c4cca702b9841a30119fee7b6072,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173099675644448728, guid: 1904c4cca702b9841a30119fee7b6072,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173099675644448728, guid: 1904c4cca702b9841a30119fee7b6072,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173099675644448730, guid: 1904c4cca702b9841a30119fee7b6072,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3173099675644448731, guid: 1904c4cca702b9841a30119fee7b6072,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -335,7 +355,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -125}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338490891
 MonoBehaviour:
@@ -697,7 +717,7 @@ MonoBehaviour:
   - {fileID: 4094717218476262462}
   - {fileID: 3701801378974256957}
   - {fileID: 1813533531}
-  waitTime: 10
+  waitTime: 1
   memorized: 0
   pauseButton: {fileID: 1234753849}
   panel: {fileID: 934614683}
@@ -902,7 +922,7 @@ GameObject:
   - component: {fileID: 934614686}
   - component: {fileID: 934614685}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Instructions Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1686,7 +1706,7 @@ PrefabInstance:
     - target: {fileID: 7056682215990029141, guid: 3c2066f92d99ac8468dca637283fc9db,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 97.9
+      value: 106.77
       objectReference: {fileID: 0}
     - target: {fileID: 7056682215990029141, guid: 3c2066f92d99ac8468dca637283fc9db,
         type: 3}

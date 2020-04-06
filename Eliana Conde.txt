@@ -9,11 +9,14 @@ FAZER
 	marcar numero de palavras acertadas
 	n deixar as letras em cima da outra
 
+
 TALVEZ
 	aumentar stack de letras
 	sumir as letras no pause
 	pausar temporariamente se clicar e segurar na tela
 	tela para explicar a interface e jogo(tutorial separado/tutorial forcado na primeira fase
+	pular os 10 segundos de memorizar a tela
+	contador do tempo de moemorizar a tela
 
 
 

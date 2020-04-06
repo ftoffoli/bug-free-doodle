@@ -37,5 +37,11 @@ public class PlayerMovement : MonoBehaviour
                                                                 mousePos, speed);
             }
         }
+
+        else if(Input.GetMouseButtonUp(0))
+        {
+            this.transform.position = new Vector3(0, 0, 64f);
+        }
+
     }
 }

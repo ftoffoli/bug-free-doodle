@@ -189,7 +189,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit Game
+  m_Text: Sair
 --- !u!222 &148029322
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -319,8 +319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: -97.6}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 308, y: -93}
+  m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669175584
 MonoBehaviour:
@@ -546,7 +546,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start Game
+  m_Text: Comecar
 --- !u!222 &724996839
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -729,7 +729,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Best Time:'
+  m_Text: 'Melhor tempo:'
 --- !u!222 &950873409
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -806,7 +806,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Previous Time:'
+  m_Text: 'Tempo anterior:'
 --- !u!222 &952277110
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -928,8 +928,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: -61.04}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -70}
+  m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176957707
 MonoBehaviour:
@@ -1138,7 +1138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -239.25, y: 71.7}
+  m_AnchoredPosition: {x: -239.25, y: 30.02}
   m_SizeDelta: {x: 266.5, y: 105.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1656723670
@@ -1172,7 +1172,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Game's Name
+  m_Text: NOSSO JOGO
 --- !u!222 &1656723671
 CanvasRenderer:
   m_ObjectHideFlags: 0
