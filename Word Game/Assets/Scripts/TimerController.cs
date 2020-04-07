@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimerController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class TimerController : MonoBehaviour
     public float totalTime;
     public bool isTimeOver = false;
     public bool isPaused = false;
+
+    public Text objectsList;
 
     private PlayerPreferences playerPrefsScript;
     private ObjectsController objectsControllerScript;
@@ -40,6 +43,11 @@ public class TimerController : MonoBehaviour
         else if(!isTimeOver && objectsControllerScript.memorized)
         {
             currentTime -= Time.deltaTime;
+        }
+
+        if (objectsList.text.Trim().Length == 0)
+        {
+            playerPrefsScript.SaveScore(totalTime - 1);
         }
     }
 

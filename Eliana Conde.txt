@@ -1,13 +1,9 @@
 FAZER
 	adicionar som quando formar palavra
 	adicionar som quando pegar letra (som pequeno)
-	aumentar e mudar os botoes de lugar
-	mudar o menu para portugues
-	mudar o player de lugar para nao coletar letras sem clicar
-	tentar melhorar spawn de letras (aparecer 
 	ganhar o jogo
 	marcar numero de palavras acertadas
-	n deixar as letras em cima da outra
+	remover WXZYK da lista de letras
 
 
 TALVEZ
@@ -19,4 +15,6 @@ TALVEZ
 	contador do tempo de moemorizar a tela
 
 
+*************VOLTAR O TEMPO DE MEMORIZACAO*************
 
+arrumamos o spawn das letras

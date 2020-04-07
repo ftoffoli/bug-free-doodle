@@ -655,7 +655,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: e5bf1b3b90e6ac54043cc978e520782c
+      Hash: d9148af650fadae1b6a2eae0508addca
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TimerController
@@ -739,7 +739,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 0642807728b1a1b044a3b9d855ddda5b
+      Hash: f23985175c8feeeb007b873ebeb02483
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CheckForWords
@@ -825,5 +825,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu Scene.unity
   - Assets/Scenes/Game Scene.unity
-  playerPath: C:/Users/R Conde/Documents/Almost Games/bug-free-doodle/Game Build/Word
-    Game.exe
+  playerPath: C:/Users/R Conde/Documents/Almost Games/bug-free-doodle/Game Build
+    - Windows/Word Game.exe

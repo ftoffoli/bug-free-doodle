@@ -30,7 +30,7 @@ public class Death : MonoBehaviour
             //Display the Death panel
             panel.gameObject.SetActive(true);
             //Changes to Death message
-            message.text = "Your Time is Up";
+            message.text = "O tempo acabou!";
             //Pause the time
             Time.timeScale = 0f;
         }

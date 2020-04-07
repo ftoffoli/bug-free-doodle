@@ -12,6 +12,8 @@ public class CheckForWords : MonoBehaviour
     [SerializeField]
     private string[] wordsArray;
 
+    public Text endGameMessage;
+    public GameObject panel;
     public Text objectsList;
     public Text lettersStack;
     public GameObject lettersObject;
@@ -55,6 +57,11 @@ public class CheckForWords : MonoBehaviour
             {
                 //toggle.isOn = false;
             }
+        }
+
+        if (objectsList.text.Trim().Length == 0)
+        {
+            CheckIfWon();
         }
 
         temp = lettersStack.text;
@@ -133,5 +140,15 @@ public class CheckForWords : MonoBehaviour
                 objectsList.text += obj + "  ";
             }
         }
+    }
+
+    private void CheckIfWon()
+    {
+        //Display the Death panel
+        panel.gameObject.SetActive(true);
+        //Changes to Death message
+        endGameMessage.text = "Voce Ganhou!!";
+        //Pause the time
+        Time.timeScale = 0f;
     }
 }

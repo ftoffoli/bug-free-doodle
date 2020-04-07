@@ -29,15 +29,17 @@ public class SpawnLetters : MonoBehaviour
     private ObjectsController objectsControllerScript;
 
     /*
-     * Posicao 0 - 4 ->vogais. 
-     * Posição 5-6 -> S, R, N, D, M. 
-     * Posição 7-8 -> T, C, L, P, V, G, H, Q, B, F, J
-     * Posição 9 -> Z, X, K, Y, W*/
+     * Posicao 0-4 -> A, E, I, O, R
+     * Posição 5-6 -> C, H, L, M, N, S
+     * Posição 7-8 -> B, D, F, G, P, T
+     * Posição 9   -> J, Q, U, V 
+     * Letras removidas Z, X, K, Y, W
+     */
     private int[] weight = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    private int[] group1 = { 0, 4, 8, 14, 20 };
-    private int[] group2 = { 3, 12, 13, 17, 18 };
-    private int[] group3 = { 1, 2, 5, 6, 7, 9, 11, 15, 16, 19, 21 };
-    private int[] group4 = { 10, 22, 23, 24, 25 };
+    private int[] group1 = { 0, 4, 8, 14, 17 };
+    private int[] group2 = { 2, 7, 11, 12, 13, 18 };
+    private int[] group3 = { 1, 3, 5, 6, 15, 19 };
+    private int[] group4 = { 9, 16, 20, 21 };
     private int tempWeight;
 
     void Start()
@@ -69,40 +71,40 @@ public class SpawnLetters : MonoBehaviour
      * here is where we give importance to one group of words
         * */
     private void spawn()
-    { 
+    {
         temp = Instantiate(prefab[0]) as GameObject;
+        temp.SetActive(false);
+
         temp.name = "letter";
         if (temp != null)
         {
             tempWeight = Random.Range(0, 11);
-            if (tempWeight >= 0 && tempWeight <= 4)
+            if (tempWeight >= 0 && tempWeight <= 3)
             {
                 tempWeight = Random.Range(0,5);
                 letter = group1[tempWeight];
             }
-            else if (tempWeight == 5 || tempWeight == 6 || tempWeight == 7)
+            else if (tempWeight >= 4 && tempWeight <= 7)
             {
-                tempWeight = Random.Range(0, 5);
+                tempWeight = Random.Range(0, 6);
                 letter = group2[tempWeight];
             }
             else if (tempWeight == 8 || tempWeight == 9)
             {
-                tempWeight = Random.Range(0, 11);
+                tempWeight = Random.Range(0, 6);
                 letter = group3[tempWeight];
             }
             else if (tempWeight == 10)
             {
-                tempWeight = Random.Range(0, 5);
+                tempWeight = Random.Range(0, 4);
                 letter = group4[tempWeight];
             }
             temp.GetComponent<SpriteRenderer>().sprite = spriteSelection[letter];
 
             temp.transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-3, 4.3f), transform.position.z);
-
             
             var hitColliders = Physics.OverlapSphere(temp.transform.position, transform.localScale.x / 2);
 
-            Debug.Log(hitColliders.Length);
 
             if (hitColliders.Length == 0)
             {
@@ -110,7 +112,7 @@ public class SpawnLetters : MonoBehaviour
             }
             else
             {
-                Debug.Log("bateu");
+                spawn();
             }
             
             isFree = false;
