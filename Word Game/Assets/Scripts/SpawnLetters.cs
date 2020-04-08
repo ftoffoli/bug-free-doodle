@@ -101,9 +101,9 @@ public class SpawnLetters : MonoBehaviour
             }
             temp.GetComponent<SpriteRenderer>().sprite = spriteSelection[letter];
 
-            temp.transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-3, 4.3f), transform.position.z);
+            temp.transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-3, 3.8f), transform.position.z);
             
-            var hitColliders = Physics.OverlapSphere(temp.transform.position, transform.localScale.x / 2);
+            var hitColliders = Physics.OverlapSphere(temp.transform.position, transform.localScale.x * 1.5f);
 
 
             if (hitColliders.Length == 0)
@@ -112,6 +112,7 @@ public class SpawnLetters : MonoBehaviour
             }
             else
             {
+                Destroy(temp);
                 spawn();
             }
             
