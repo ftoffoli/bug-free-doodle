@@ -64,7 +64,7 @@ public class PlayerPreferences : MonoBehaviour
             float bestScore = GetBestScore();
 
             //Checks if the current value to be saved is bigger than the previous Best Score
-            if(value > bestScore)
+            if(value < bestScore)
             {
                 PlayerPrefs.SetFloat("bestScore", value);
                 PlayerPrefs.SetFloat("previousScore", value);

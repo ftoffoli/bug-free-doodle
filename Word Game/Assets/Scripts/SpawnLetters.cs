@@ -27,6 +27,7 @@ public class SpawnLetters : MonoBehaviour
 
     public GameObject gameManager;
     private ObjectsController objectsControllerScript;
+    private AudioController audioControllerScript;
 
     /*
      * Posicao 0-4 -> A, E, I, O, R
@@ -45,6 +46,7 @@ public class SpawnLetters : MonoBehaviour
     void Start()
     {
         objectsControllerScript = gameManager.GetComponent<ObjectsController>();
+        audioControllerScript = gameManager.GetComponent<AudioController>();
     }
 
     /*  When the timer achieves the currentRateSpawn, 
@@ -125,13 +127,16 @@ public class SpawnLetters : MonoBehaviour
     //In this method we get the proper Sprite that will appear
     private void OnTriggerEnter(Collider other)
     {
+        
+
         if (last == true) { 
             spawn();
         }
 
         letterPosition = int.Parse(gameObject.GetComponent<SpriteRenderer>().sprite.name.Substring(8));
+        audioControllerScript.PlayCollectedLetter();
         checkLenghtAndAdd();
-        
+
         Destroy(gameObject);
     }
 
@@ -402,6 +407,11 @@ public class SpawnLetters : MonoBehaviour
         stackList[7].GetComponent<SpriteRenderer>().sprite = stackList[8].GetComponent<SpriteRenderer>().sprite;
         stackList[8].GetComponent<SpriteRenderer>().sprite = stackList[9].GetComponent<SpriteRenderer>().sprite;
         stackList[9].GetComponent<SpriteRenderer>().sprite = spriteSelection[letterPosition];
+    }
+
+    private void OnDestroy()
+    {
+        
     }
 }
 

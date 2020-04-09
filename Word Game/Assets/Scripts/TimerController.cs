@@ -16,6 +16,7 @@ public class TimerController : MonoBehaviour
 
     private PlayerPreferences playerPrefsScript;
     private ObjectsController objectsControllerScript;
+    private AudioController audioControllerScript;
 
 
     // Start is called before the first frame update
@@ -24,10 +25,11 @@ public class TimerController : MonoBehaviour
         Time.timeScale = 1f;
         //Sets current time as the initial time
         currentTime = initialTime;
-        totalTime = initialTime;
+        totalTime = 0;
 
         playerPrefsScript = this.GetComponent<PlayerPreferences>();
         objectsControllerScript = this.GetComponent<ObjectsController>();
+        audioControllerScript = this.GetComponent<AudioController>();
     }
 
     // Update is called once per frame
@@ -37,23 +39,24 @@ public class TimerController : MonoBehaviour
         if(currentTime < 1)
         {
             isTimeOver = true;
-            playerPrefsScript.SaveScore(totalTime - 1);
+            audioControllerScript.PlayLosing();
         }
         //If there is time available, keep decreasing it
         else if(!isTimeOver && objectsControllerScript.memorized)
         {
             currentTime -= Time.deltaTime;
+            totalTime += Time.deltaTime;
         }
 
         if (objectsList.text.Trim().Length == 0)
         {
-            playerPrefsScript.SaveScore(totalTime - 1);
+            playerPrefsScript.SaveScore(totalTime);
         }
     }
 
     public void addTime(float timeToAdd)
     {
         currentTime += timeToAdd;
-        totalTime += timeToAdd;
+        //totalTime += timeToAdd;
     }
 }

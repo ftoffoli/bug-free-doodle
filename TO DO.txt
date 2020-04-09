@@ -1,6 +1,4 @@
 FAZER
-	adicionar som quando formar palavra
-	adicionar som quando pegar letra (som pequeno)
 	marcar numero de palavras acertadas
 	explicar melhor o jogo na tela de instrucoes
 
@@ -14,3 +12,8 @@ TALVEZ
 	contador do tempo de moemorizar a tela
 
 
+DONE
+
+	arrumamos a pontuacao
+	cortamos e loopamos das musicas de fundo (menu inicial e dentro do jogo)
+	colocamos som ao coletar letra

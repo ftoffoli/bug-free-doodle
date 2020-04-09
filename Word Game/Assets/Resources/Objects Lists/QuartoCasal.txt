@@ -1,8 +1,9 @@
 cama
-mesa
+comoda
 tapete
 mancebo
 abajur
 espelho
 cadeira
 vaso
+quadro

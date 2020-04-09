@@ -20,6 +20,7 @@ public class CheckForWords : MonoBehaviour
     private SpawnLetters spawnLetterScript;
     private TimerController timerControllerScript;
     private ObjectsController objectsControllerScript;
+    private AudioController audioControllerScript;
 
     private char[] word;
     private char[] stackedLetters;
@@ -35,7 +36,8 @@ public class CheckForWords : MonoBehaviour
         wordsArray = this.GetComponent<LoadData>().LoadFile();
         timerControllerScript = this.GetComponent<TimerController>();
         objectsControllerScript = this.GetComponent<ObjectsController>();
-    
+        audioControllerScript = this.GetComponent<AudioController>();
+
         spawnLetterScript = lettersObject.GetComponent<SpawnLetters>();
         updateObjectsList(wordsArray);
     }
@@ -98,6 +100,7 @@ public class CheckForWords : MonoBehaviour
                 wordsArray[Array.IndexOf(wordsArray, str)] = "+";
 
                 updateObjectsList(wordsArray);
+                audioControllerScript.PlayWordCompleted();
 
                 return true;
             }
@@ -144,6 +147,7 @@ public class CheckForWords : MonoBehaviour
 
     private void CheckIfWon()
     {
+        audioControllerScript.PlayWinning();
         //Display the Death panel
         panel.gameObject.SetActive(true);
         //Changes to Death message
