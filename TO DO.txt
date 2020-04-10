@@ -1,6 +1,6 @@
 FAZER
 	marcar numero de palavras acertadas
-	explicar melhor o jogo na tela de instrucoes
+
 
 
 TALVEZ
@@ -14,6 +14,5 @@ TALVEZ
 
 DONE
 
-	arrumamos a pontuacao
-	cortamos e loopamos das musicas de fundo (menu inicial e dentro do jogo)
-	colocamos som ao coletar letra
+	Reduzir qualidade dos audios
+	colocar botao de MUDO no menu inicial

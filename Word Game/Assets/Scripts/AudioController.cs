@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class AudioController : MonoBehaviour
@@ -10,6 +11,8 @@ public class AudioController : MonoBehaviour
 
     public AudioSource BGMSource;
     public AudioMixer masterMixer;
+    public Button muteButton;
+    public Sprite[] muteSprites; 
 
     public AudioClip letterCollected;
     public AudioClip wordCompleted;
@@ -72,11 +75,12 @@ public class AudioController : MonoBehaviour
         if (tempVolume == -80f)
         {
             masterMixer.SetFloat("masterVol", 0f);
+            muteButton.image.sprite = muteSprites[1];
         }
         else
         {
             masterMixer.SetFloat("masterVol", -80f);
+            muteButton.image.sprite = muteSprites[0];
         }
-        
     }
 }
