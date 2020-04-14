@@ -8,6 +8,7 @@ public class AudioController : MonoBehaviour
 {
     private bool isFirstTime;
     private AudioSource audioSource;
+    private float tempVolume = 0;
 
     public AudioSource BGMSource;
     public AudioMixer masterMixer;
@@ -24,6 +25,10 @@ public class AudioController : MonoBehaviour
     {
         audioSource = this.GetComponent<AudioSource>();
         isFirstTime = true;
+
+        masterMixer.GetFloat("masterVol", out tempVolume);
+
+        getVolume();
     }
 
     // Update is called once per frame
@@ -67,9 +72,21 @@ public class AudioController : MonoBehaviour
         }
     }
 
+    private void getVolume()
+    {
+        if (tempVolume == -80f)
+        {
+            muteButton.image.sprite = muteSprites[0];
+        }
+        else
+        {
+            muteButton.image.sprite = muteSprites[1];
+        }
+    }
+
     public void MuteSound()
     {
-        float tempVolume;
+        //tempVolume;
         masterMixer.GetFloat("masterVol", out tempVolume);
 
         if (tempVolume == -80f)

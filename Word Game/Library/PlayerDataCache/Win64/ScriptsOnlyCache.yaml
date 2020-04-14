@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - AudioController
     - ChangeScene
     - CheckForWords
+    - CreditsPanel
     - Death
     - LoadData
     - ObjectsController
@@ -33,6 +34,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
     com.unity.multiplayer-hlapi.Runtime.dll:
     - UnityEngine.Networking.NetworkCallbacks
@@ -68,6 +72,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -91,27 +97,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12172}
     - Class: 114
-      Script: {instanceID: 12480}
+      Script: {instanceID: 12266}
     - Class: 114
-      Script: {instanceID: 12508}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12882}
+      Script: {instanceID: 12510}
     - Class: 114
-      Script: {instanceID: 13068}
+      Script: {instanceID: 12884}
     - Class: 114
-      Script: {instanceID: 13186}
+      Script: {instanceID: 13070}
     - Class: 114
-      Script: {instanceID: 13358}
+      Script: {instanceID: 13188}
     - Class: 114
-      Script: {instanceID: 13374}
+      Script: {instanceID: 13360}
     - Class: 114
-      Script: {instanceID: 13458}
+      Script: {instanceID: 13376}
     - Class: 114
-      Script: {instanceID: 13538}
+      Script: {instanceID: 13460}
     - Class: 114
-      Script: {instanceID: 13576}
+      Script: {instanceID: 13540}
     - Class: 114
-      Script: {instanceID: 25652}
+      Script: {instanceID: 13578}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -137,6 +143,8 @@ ScriptsOnlyBuild:
     - Class: 243
       Script: {instanceID: 0}
     - Class: 245
+      Script: {instanceID: 0}
+    - Class: 258
       Script: {instanceID: 0}
     Assets/Scenes/MainMenu Scene.unity:
     - Class: 1
@@ -172,11 +180,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11192}
     - Class: 114
+      Script: {instanceID: 11212}
+    - Class: 114
       Script: {instanceID: 11400}
+    - Class: 114
+      Script: {instanceID: 11404}
     - Class: 114
       Script: {instanceID: 11448}
     - Class: 114
       Script: {instanceID: 11650}
+    - Class: 114
+      Script: {instanceID: 11830}
     - Class: 114
       Script: {instanceID: 11936}
     - Class: 114
@@ -184,19 +198,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12140}
     - Class: 114
-      Script: {instanceID: 12480}
+      Script: {instanceID: 12230}
     - Class: 114
-      Script: {instanceID: 12882}
+      Script: {instanceID: 12266}
     - Class: 114
-      Script: {instanceID: 13068}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 13186}
+      Script: {instanceID: 12884}
     - Class: 114
-      Script: {instanceID: 13458}
+      Script: {instanceID: 13070}
     - Class: 114
-      Script: {instanceID: 13538}
+      Script: {instanceID: 13188}
     - Class: 114
-      Script: {instanceID: 13576}
+      Script: {instanceID: 13460}
+    - Class: 114
+      Script: {instanceID: 13540}
+    - Class: 114
+      Script: {instanceID: 13578}
+    - Class: 114
+      Script: {instanceID: 29398}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -520,6 +540,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: e00cee74350a409b7defe6cf5813d000
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioController
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -852,10 +878,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: ccb7faf995d5302e20c5b279fd4a9e97
+      Hash: 235a1e8275c5d1ab2a1c0f017d90e1b5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: AudioController
+    className: CreditsPanel
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu Scene.unity
