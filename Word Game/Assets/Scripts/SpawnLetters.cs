@@ -81,12 +81,12 @@ public class SpawnLetters : MonoBehaviour
         if (temp != null)
         {
             tempWeight = Random.Range(0, 11);
-            if (tempWeight >= 0 && tempWeight <= 3)
+            if (tempWeight >= 0 && tempWeight <= 4)
             {
                 tempWeight = Random.Range(0,5);
                 letter = group1[tempWeight];
             }
-            else if (tempWeight >= 4 && tempWeight <= 7)
+            else if (tempWeight >= 5 && tempWeight <= 7)
             {
                 tempWeight = Random.Range(0, 6);
                 letter = group2[tempWeight];

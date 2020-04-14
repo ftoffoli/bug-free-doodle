@@ -5,3 +5,6 @@ PERGUNTAS
 	O tempo eh suficiente?
 	O bonus por acertar eh o suficiente?
 	O jogo eh muito dificil?
+	As musicas sao boas?
+	Os efeitos sonoros sao bons?
+	A paleta de cores eh agradavel/boa?

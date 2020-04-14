@@ -1,18 +1,22 @@
 FAZER
-	marcar numero de palavras acertadas
+	marcar numero de palavras acertadas/mostrar palavras acertadas no pause
+	pular os 10 segundos de memorizar a tela
+	contador do tempo de moemorizar a tela
+	tela para explicar a interface e jogo(tutorial separado/tutorial forcado na primeira fase)
+	reformular explicacao de como jogar
 
-
+	colocar botoes na selecao de fase (som e voltar pro menu inicial)
+	ver quais scripts vao ser usados (do gameManager) na selecao de fase
+	carregar best score
+	carregar fase 2 se a fase 1 ja foi completada
+	fazer fase 2
 
 TALVEZ
 	aumentar stack de letras
 	sumir as letras no pause
 	pausar temporariamente se clicar e segurar na tela
-	tela para explicar a interface e jogo(tutorial separado/tutorial forcado na primeira fase
-	pular os 10 segundos de memorizar a tela
-	contador do tempo de moemorizar a tela
-
+	lista de objetos aparecer um numero limitado de vezes ou "gastar" tempo para poder ver
+	trocar musica de perder o jogo
 
 DONE
 
-	Reduzir qualidade dos audios
-	colocar botao de MUDO no menu inicial
