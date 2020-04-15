@@ -14,6 +14,7 @@ public class Tutorial : MonoBehaviour
     public GameObject timer;
     public GameObject pauseButton;
     public GameObject objectsList;
+    public GameObject B;
 
     private void Start()
     {
@@ -23,8 +24,9 @@ public class Tutorial : MonoBehaviour
         timer.SetActive(false);
         pauseButton.SetActive(false);
         objectsList.SetActive(false);
+        B.SetActive(false);
 
-        for(int counter = 1; counter < boxes.Length; counter++)
+        for (int counter = 1; counter < boxes.Length; counter++)
         {
             boxes[counter].SetActive(false);
         }
@@ -72,7 +74,16 @@ public class Tutorial : MonoBehaviour
             boxes[boxPosition].SetActive(true);
             lettersStack.SetActive(true);
         }
-        else if (boxPosition == 6)
+        else if(boxPosition == 6)
+        {
+            lettersStack.SetActive(false);
+            boxes[prevBoxPos].SetActive(false);
+
+            boxes[boxPosition].SetActive(true);
+            B.SetActive(true);
+            pia.SetActive(true);
+        }
+        else if (boxPosition == 7)
         {
             boxes[prevBoxPos].SetActive(false);
 

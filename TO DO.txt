@@ -1,6 +1,10 @@
 FAZER
 	DESCOBRIR COMO MONETIZAR O JOGO
 
+	adicionar no tutorial falando o q acontece qndo forma palavras
+	fazer botoes das outras fases chamar a cena
+	arrumar ancora dos elementos UI na tela do tutorial
+
 	mostrar pontuacao na tela (tempo adicionado)
 	colocar botoes na selecao de fase (som e voltar pro menu inicial)
 
@@ -17,11 +21,3 @@ TALVEZ
 	trocar musica de perder o jogo
 
 DONE
-
-	cena tutorial basica completa
-	tela para explicar a interface e jogo(tutorial separado/tutorial forcado na primeira fase)
-	reformular explicacao de como jogar
-	pular os 10 segundos de memorizar a tela
-	contador do tempo de moemorizar a tela
-	adicionamos telas (sala, cozinha, banheiro)
-	ver quais scripts vao ser usados (do gameManager) na selecao de fase
