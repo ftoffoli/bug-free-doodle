@@ -1706,12 +1706,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 479183139}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &934614683 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 934614683, guid: 590cb7824ac9e1749b6257acd3d3ba60,
-    type: 3}
-  m_PrefabInstance: {fileID: 1048327869}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &941502615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1842,6 +1836,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1756580217}
+    - target: {fileID: 592632161, guid: 590cb7824ac9e1749b6257acd3d3ba60, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level Selection
+      objectReference: {fileID: 0}
     - target: {fileID: 592632162, guid: 590cb7824ac9e1749b6257acd3d3ba60, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2551,7 +2549,7 @@ PrefabInstance:
     - target: {fileID: 646401325, guid: e3c8bf8694b2daa46b6ab9c622b2984f, type: 3}
       propertyPath: panel
       value: 
-      objectReference: {fileID: 934614683}
+      objectReference: {fileID: 0}
     - target: {fileID: 646401325, guid: e3c8bf8694b2daa46b6ab9c622b2984f, type: 3}
       propertyPath: memorized
       value: 0
