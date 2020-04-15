@@ -1402,7 +1402,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: a21679353ea5c79498a15f3ec0cbad83,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a21679353ea5c79498a15f3ec0cbad83,
         type: 3}
@@ -2461,7 +2461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.5599976, y: -150}
+  m_AnchoredPosition: {x: -4.5599365, y: -150}
   m_SizeDelta: {x: 96.100006, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &1804571294
@@ -2624,7 +2624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1946830861
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3182,7 +3182,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6328146044088710977}
         m_MethodName: OpenNext
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

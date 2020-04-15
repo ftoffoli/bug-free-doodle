@@ -32,10 +32,13 @@ public class Tutorial : MonoBehaviour
         }
     }
 
-    public void OpenNext()
+    public void OpenNext(int direction)
     {
         int prevBoxPos = boxPosition;
+        
         boxPosition++;
+        
+        
 
         if(boxPosition == 1)
         {

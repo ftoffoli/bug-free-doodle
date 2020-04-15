@@ -4,4 +4,3 @@ lampada
 ducha
 privada
 espelho
-armario
