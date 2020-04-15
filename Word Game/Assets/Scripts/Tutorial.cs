@@ -92,7 +92,7 @@ public class Tutorial : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("MainMenu Scene");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
