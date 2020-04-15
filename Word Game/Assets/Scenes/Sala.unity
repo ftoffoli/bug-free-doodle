@@ -1436,12 +1436,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 479183139}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &934614683 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 934614683, guid: 590cb7824ac9e1749b6257acd3d3ba60,
-    type: 3}
-  m_PrefabInstance: {fileID: 1048327869}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &981846127 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 58d0ee53120a77742804c79f6020c226,
@@ -1889,12 +1883,12 @@ PrefabInstance:
     - target: {fileID: 1269111649207610923, guid: 590cb7824ac9e1749b6257acd3d3ba60,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 355
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 1269111649207610923, guid: 590cb7824ac9e1749b6257acd3d3ba60,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -191
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1269111649207610923, guid: 590cb7824ac9e1749b6257acd3d3ba60,
         type: 3}
@@ -2234,7 +2228,7 @@ PrefabInstance:
     - target: {fileID: 646401325, guid: e3c8bf8694b2daa46b6ab9c622b2984f, type: 3}
       propertyPath: panel
       value: 
-      objectReference: {fileID: 934614683}
+      objectReference: {fileID: 0}
     - target: {fileID: 646401325, guid: e3c8bf8694b2daa46b6ab9c622b2984f, type: 3}
       propertyPath: memorized
       value: 0
