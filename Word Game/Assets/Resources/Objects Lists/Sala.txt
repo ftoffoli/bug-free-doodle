@@ -1,0 +1,8 @@
+quadro
+televisao
+estante
+lampada
+tapete
+sofa
+almofada
+poltrona

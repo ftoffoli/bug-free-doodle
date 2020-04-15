@@ -31,10 +31,11 @@ public class Timer : MonoBehaviour
     {
         //Gets the updated current time
         currentTime = timerControllerScript.currentTime;
-        if(objectsControllerScript.memorized)
-        {
-            DisplayTime();
-        }
+        
+        //if(objectsControllerScript.memorized)
+        //{
+           DisplayTime();
+        //}
     }
 
     //Method to display the decreasing time

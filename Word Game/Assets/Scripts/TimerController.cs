@@ -9,6 +9,7 @@ public class TimerController : MonoBehaviour
     public float initialTime = 30f;
     public float currentTime;
     public float totalTime;
+    public float memorizeTime = 10f;
     public bool isTimeOver = false;
     public bool isPaused = false;
 
@@ -24,7 +25,7 @@ public class TimerController : MonoBehaviour
     {
         Time.timeScale = 1f;
         //Sets current time as the initial time
-        currentTime = initialTime;
+        currentTime = memorizeTime;
         totalTime = 0;
 
         playerPrefsScript = this.GetComponent<PlayerPreferences>();
@@ -36,7 +37,7 @@ public class TimerController : MonoBehaviour
     void Update()
     {
         //Checks if there is available time
-        if(currentTime < 1)
+        if(currentTime < 1 && objectsControllerScript.memorized)
         {
             isTimeOver = true;
             audioControllerScript.PlayLosing();
@@ -46,6 +47,10 @@ public class TimerController : MonoBehaviour
         {
             currentTime -= Time.deltaTime;
             totalTime += Time.deltaTime;
+        }
+        else if(!objectsControllerScript.memorized)
+        {
+            currentTime -= Time.deltaTime;
         }
 
         if (objectsList.text.Trim().Length == 0)
@@ -57,6 +62,5 @@ public class TimerController : MonoBehaviour
     public void addTime(float timeToAdd)
     {
         currentTime += timeToAdd;
-        //totalTime += timeToAdd;
     }
 }

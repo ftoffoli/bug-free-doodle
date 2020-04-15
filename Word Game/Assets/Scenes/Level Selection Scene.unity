@@ -950,6 +950,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1756580211, guid: e3c8bf8694b2daa46b6ab9c622b2984f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156993911173062189, guid: e3c8bf8694b2daa46b6ab9c622b2984f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1156993911173062193, guid: e3c8bf8694b2daa46b6ab9c622b2984f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1005,10 +1014,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1156993911173062194, guid: e3c8bf8694b2daa46b6ab9c622b2984f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1156993911173062199, guid: e3c8bf8694b2daa46b6ab9c622b2984f,
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309770676087346887, guid: e3c8bf8694b2daa46b6ab9c622b2984f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c8bf8694b2daa46b6ab9c622b2984f, type: 3}
@@ -2294,7 +2313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09135223, g: 0.5849056, b: 0.39215687, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

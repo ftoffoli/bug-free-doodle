@@ -1,7 +1,7 @@
 PERGUNTAS
 	As letras aparecem numa boa velocidade?
 	As letras ficam tempo suficiente na tela?
-	O tamanho dos elementos eh bom? (letras na tela, letras coletadas, tempo, lista de palavras, botoes, etc)
+	O tamanho dos elementos eh bom? Se nao, o q pode mudar? (letras na tela, letras coletadas, tempo, lista de palavras, botoes, etc)
 	O tempo eh suficiente?
 	O bonus por acertar eh o suficiente?
 	O jogo eh muito dificil?

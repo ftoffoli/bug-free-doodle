@@ -26,6 +26,7 @@ public class CheckForWords : MonoBehaviour
     private char[] stackedLetters;
     private string matchedLetters;
     private int wordLength;
+    private bool firstLoad = true;
 
 
     string temp;
@@ -40,11 +41,18 @@ public class CheckForWords : MonoBehaviour
 
         spawnLetterScript = lettersObject.GetComponent<SpawnLetters>();
         updateObjectsList(wordsArray);
+        objectsList.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(objectsControllerScript.memorized && firstLoad)
+        {
+            objectsList.gameObject.SetActive(true);
+            firstLoad = false;
+        }
+
         if (!lettersStack.text.Equals(temp))
         {
             if (CheckForWord())

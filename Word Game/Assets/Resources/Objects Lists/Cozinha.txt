@@ -1,0 +1,7 @@
+lampada
+forno
+geladeira
+fogao
+pia
+cafeteira
+armario

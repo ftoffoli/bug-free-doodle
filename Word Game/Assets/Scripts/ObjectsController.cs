@@ -6,17 +6,22 @@ using UnityEngine.UI;
 public class ObjectsController : MonoBehaviour
 {
     public GameObject[] objectsArray;
-    public float waitTime;
+    private float waitTime;
     public bool memorized = false;
 
     public Button pauseButton;
-    public GameObject panel;
+    public Button skipButton;
+
+    private TimerController timerControllerScript;
      
     // Start is called before the first frame update
     void Start()
     {
+        timerControllerScript = this.GetComponent<TimerController>();
+        waitTime = timerControllerScript.memorizeTime;
         pauseButton.interactable = false;
-        panel.SetActive(true);
+
+        StartCoroutine(memorizeTime());
     }
 
     // Update is called once per frame
@@ -35,13 +40,9 @@ public class ObjectsController : MonoBehaviour
 
     IEnumerator memorizeTime()
     {
-        panel.SetActive(false);
-
         yield return new WaitForSeconds(waitTime);
-        
-        gameSetUp();
-        memorized = true;
-        pauseButton.interactable = true;
+
+        SkipMemorizeTime();
     }
 
     public void displayObject(string objName)
@@ -55,8 +56,12 @@ public class ObjectsController : MonoBehaviour
         }
     }
 
-    public void howToPlay()
+    public void SkipMemorizeTime()
     {
-        StartCoroutine(memorizeTime());
+        gameSetUp();
+        memorized = true;
+        pauseButton.interactable = true;
+        timerControllerScript.currentTime = timerControllerScript.initialTime;
+        skipButton.gameObject.SetActive(false);
     }
 }

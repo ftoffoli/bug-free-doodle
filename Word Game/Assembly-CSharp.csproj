@@ -77,10 +77,11 @@
     <Compile Include="Assets\Scripts\SpawnLetters.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TimerController.cs" />
-    <None Include="Assets\Resources\Objects Lists\words_PtBR.txt" />
-    <None Include="Assets\Resources\Objects Lists\words_EN.txt" />
-    <None Include="Assets\Resources\Objects Lists\QuartoCasal.txt" />
-    <None Include="Assets\Resources\Objects Lists\wordsCSV.txt" />
+    <Compile Include="Assets\Scripts\Tutorial.cs" />
+    <None Include="Assets\Resources\Objects Lists\Banheiro.txt" />
+    <None Include="Assets\Resources\Objects Lists\Cozinha.txt" />
+    <None Include="Assets\Resources\Objects Lists\Sala.txt" />
+    <None Include="Assets\Resources\Objects Lists\Quarto.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/R Conde/Documents/Almost Games/bug-free-doodle/Word Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
