@@ -1662,7 +1662,7 @@ PrefabInstance:
     - target: {fileID: 592632162, guid: 590cb7824ac9e1749b6257acd3d3ba60, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -949555466598364076, guid: efbf521741c4857458f72e37e54a2ad6,
+      objectReference: {fileID: -3221549335397084574, guid: efbf521741c4857458f72e37e54a2ad6,
         type: 3}
     - target: {fileID: 599908061, guid: 590cb7824ac9e1749b6257acd3d3ba60, type: 3}
       propertyPath: m_FontData.m_FontSize

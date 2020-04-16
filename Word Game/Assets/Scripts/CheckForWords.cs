@@ -12,6 +12,7 @@ public class CheckForWords : MonoBehaviour
     [SerializeField]
     private string[] wordsArray;
 
+    public GameObject timer;
     public Text endGameMessage;
     public GameObject panel;
     public Text objectsList;
@@ -21,6 +22,7 @@ public class CheckForWords : MonoBehaviour
     private TimerController timerControllerScript;
     private ObjectsController objectsControllerScript;
     private AudioController audioControllerScript;
+    private ScoreController scoreControllerScript;
 
     private char[] word;
     private char[] stackedLetters;
@@ -38,6 +40,7 @@ public class CheckForWords : MonoBehaviour
         timerControllerScript = this.GetComponent<TimerController>();
         objectsControllerScript = this.GetComponent<ObjectsController>();
         audioControllerScript = this.GetComponent<AudioController>();
+        scoreControllerScript = this.GetComponent<ScoreController>();
 
         spawnLetterScript = lettersObject.GetComponent<SpawnLetters>();
         updateObjectsList(wordsArray);
@@ -159,7 +162,8 @@ public class CheckForWords : MonoBehaviour
         //Display the Death panel
         panel.gameObject.SetActive(true);
         //Changes to Death message
-        endGameMessage.text = "Voce Ganhou!!";
+        endGameMessage.text = "Voce Ganhou em " + scoreControllerScript.FormatText(timerControllerScript.totalTime) + "!!";
+        timer.SetActive(false);
         //Pause the time
         Time.timeScale = 0f;
     }

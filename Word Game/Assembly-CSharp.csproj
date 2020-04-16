@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\CreditsPanel.cs" />
     <Compile Include="Assets\Scripts\Death.cs" />
     <Compile Include="Assets\Scripts\LoadData.cs" />
+    <Compile Include="Assets\Scripts\MenuBGM.cs" />
     <Compile Include="Assets\Scripts\ObjectsController.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />

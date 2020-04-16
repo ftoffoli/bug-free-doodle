@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerController : MonoBehaviour
 {
@@ -55,7 +56,8 @@ public class TimerController : MonoBehaviour
 
         if (objectsList.text.Trim().Length == 0)
         {
-            playerPrefsScript.SaveScore(totalTime);
+            playerPrefsScript.SaveScore(totalTime, SceneManager.GetActiveScene().name);
+            Debug.Log("salvou");
         }
     }
 

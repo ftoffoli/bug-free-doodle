@@ -20,13 +20,13 @@ public class PlayerPreferences : MonoBehaviour
     }
 
     //Method to load the Best Score
-    public float GetBestScore()
+    public float GetScore(string level)
     {
         float score = 0f;
 
-        if(CheckIfExists("bestScore"))
+        if(CheckIfExists(level))
         {
-            score = PlayerPrefs.GetFloat("bestScore");
+            score = PlayerPrefs.GetFloat(level);
         }
         
         else
@@ -37,48 +37,8 @@ public class PlayerPreferences : MonoBehaviour
         return score;
     }
 
-    //Method to load the Previous Score
-    public float GetPreviousScore()
+    public void SaveScore(float value, string level)
     {
-        float score = 0f;
-
-        if (CheckIfExists("previousScore"))
-        {
-            score = PlayerPrefs.GetFloat("previousScore");
-        }
-
-        else
-        {
-            score = 0;
-        }
-
-        return score;
-    }
-
-    public void SaveScore(float value)
-    {
-        //Checks if there are any values previously saved (if the player has played before)
-        if(CheckIfExists("previousScore"))
-        {
-            //Variable to hold the best score for comparison
-            float bestScore = GetBestScore();
-
-            //Checks if the current value to be saved is bigger than the previous Best Score
-            if(value < bestScore)
-            {
-                PlayerPrefs.SetFloat("bestScore", value);
-                PlayerPrefs.SetFloat("previousScore", value);
-            }
-            else
-            {
-                PlayerPrefs.SetFloat("previousScore", value);
-            }
-        }
-
-        else
-        {
-            PlayerPrefs.SetFloat("bestScore", value);
-            PlayerPrefs.SetFloat("previousScore", value);
-        }
+        PlayerPrefs.SetFloat(level, value);
     }
 }

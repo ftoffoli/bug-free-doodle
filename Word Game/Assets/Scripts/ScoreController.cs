@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
-    [SerializeField]
-    private Text previousScore;
-    [SerializeField]
-    private Text bestScore;
+    public Text quartoScore;
+    public Text banheiroScore;
+    public Text cozinhaScore;
+    public Text salaScore;
 
     private PlayerPreferences playerPreferencesScript;
 
@@ -19,11 +19,13 @@ public class ScoreController : MonoBehaviour
         playerPreferencesScript = this.GetComponent<PlayerPreferences>();
 
         //Load values from the PlayerPrefs to the text holders
-        previousScore.text = FormatText(playerPreferencesScript.GetPreviousScore());
-        bestScore.text = FormatText(playerPreferencesScript.GetBestScore());
+        quartoScore.text = FormatText(playerPreferencesScript.GetScore("Quarto"));
+        banheiroScore.text = FormatText(playerPreferencesScript.GetScore("Banheiro"));
+        cozinhaScore.text = FormatText(playerPreferencesScript.GetScore("Cozinha"));
+        salaScore.text = FormatText(playerPreferencesScript.GetScore("Sala"));
     }
 
-    private string FormatText(float value)
+    public string FormatText(float value)
     {
         //Formats the time to display as 00:00
         float minutes = Mathf.FloorToInt(value / 60);
