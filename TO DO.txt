@@ -1,23 +1,31 @@
 FAZER
 	DESCOBRIR COMO MONETIZAR O JOGO
 
-	adicionar no tutorial falando o q acontece qndo forma palavras
-	fazer botoes das outras fases chamar a cena
-	arrumar ancora dos elementos UI na tela do tutorial
 
-	mostrar pontuacao na tela (tempo adicionado)
-	colocar botoes na selecao de fase (som e voltar pro menu inicial)
 
-	carregar best score
-	carregar fases se a anterior foi completada
+
 
 
 TALVEZ
-	marcar numero de palavras acertadas/mostrar palavras acertadas no pause
-	aumentar stack de letras
-	sumir as letras no pause
+
+	Leaderboard
+
+	"barra superior"
+
 	pausar temporariamente se clicar e segurar na tela
-	lista de objetos aparecer um numero limitado de vezes ou "gastar" tempo para poder ver
+
 	trocar musica de perder o jogo
+	
+	adicionar luz nas lampadas
 
 DONE
+	
+	Trocar sprites de letra
+
+	parar o tempo de contar depois que o jogo acaba (vitoria)
+
+	trocar cor de fundo tutorial
+
+	mostrar pontuacao na tela (tempo adicionado)
+
+	carregar fases se a anterior foi completada

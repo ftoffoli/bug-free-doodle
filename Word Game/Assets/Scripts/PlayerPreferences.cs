@@ -41,4 +41,5 @@ public class PlayerPreferences : MonoBehaviour
     {
         PlayerPrefs.SetFloat(level, value);
     }
+
 }

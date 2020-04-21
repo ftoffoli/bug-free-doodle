@@ -13,6 +13,7 @@ public class TimerController : MonoBehaviour
     public float memorizeTime = 10f;
     public bool isTimeOver = false;
     public bool isPaused = false;
+    public Text bonusText;
 
     public Text objectsList;
 
@@ -57,12 +58,23 @@ public class TimerController : MonoBehaviour
         if (objectsList.text.Trim().Length == 0)
         {
             playerPrefsScript.SaveScore(totalTime, SceneManager.GetActiveScene().name);
-            Debug.Log("salvou");
         }
+
     }
 
     public void addTime(float timeToAdd)
     {
         currentTime += timeToAdd;
+        
+        DisplayBonus(timeToAdd);
+    }
+
+    public void DisplayBonus(float bonus)
+    {
+        bonusText.GetComponent<Animation>().Stop();
+
+        bonusText.text = "+ " + bonus;
+
+        bonusText.GetComponent<Animation>().Play();
     }
 }
