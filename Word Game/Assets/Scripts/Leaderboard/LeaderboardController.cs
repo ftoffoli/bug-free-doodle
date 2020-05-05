@@ -148,30 +148,41 @@ public class LeaderboardController : MonoBehaviour
 		Scrolllist.Instance.loading = true;
 
 		#region Panel color change conditions
-		if (level.Equals("Quarto"))
+		try
 		{
-			URL = bedroomURL;
-			panel.GetComponent<Image>().color = new Color32(180, 90, 100, 255);
+			if (level.Equals("Quarto"))
+			{
+				URL = bedroomURL;
+				panel.GetComponent<Image>().color = new Color32(180, 90, 100, 255);
+			}
+			else if (level.Equals("Banheiro"))
+			{
+				URL = bathroomURL;
+				panel.GetComponent<Image>().color = new Color32(74, 126, 192, 255);
+			}
+			else if (level.Equals("Cozinha"))
+			{
+				URL = kitchenURL;
+				panel.GetComponent<Image>().color = new Color32(23, 149, 100, 255);
+			}
+			else if (level.Equals("Sala"))
+			{
+				URL = roomURL;
+				panel.GetComponent<Image>().color = new Color32(183, 182, 94, 255);
+			}
+			else if (level.Equals("Geral"))
+			{
+				URL = highscoreURL;
+				panel.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+			}
+			else
+			{
+				URL = highscoreURL;
+			}
 		}
-		else if (level.Equals("Banheiro"))
-		{
-			URL = bathroomURL;
-			panel.GetComponent<Image>().color = new Color32(74, 126, 192, 255);
-		}
-		else if (level.Equals("Cozinha"))
-		{
-			URL = kitchenURL;
-			panel.GetComponent<Image>().color = new Color32(23, 149, 100, 255);
-		}
-		else if (level.Equals("Sala"))
-		{
-			URL = roomURL;
-			panel.GetComponent<Image>().color = new Color32(183, 182, 94, 255);
-		}
-		else
+		catch
 		{
 			URL = highscoreURL;
-			//panel.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
 		}
 #endregion
 

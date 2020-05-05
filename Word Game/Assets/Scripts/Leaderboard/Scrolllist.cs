@@ -89,9 +89,13 @@ public class Scrolllist : MonoBehaviour {
 			{
 				ScorePanel.GetComponent<RawImage>().color = new Color32(23, 149, 100, 255);
 			}
-			else
+			else if (ScoreLevel.text.Equals("Sala"))
 			{
 				ScorePanel.GetComponent<RawImage>().color = new Color32(183, 182, 94, 255);
+			}
+			else if (ScoreLevel.text.Equals("Geral"))
+			{
+				ScorePanel.GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
 			}
 		}
 	}
