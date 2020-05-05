@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class TimerController : MonoBehaviour
 {
     //Variables
+    public Button restartButton;
+    public Button levelButton;
+    public Button soundButton;
+    public Button wonButton;
+
     public float initialTime = 30f;
     public float currentTime;
     public float totalTime;
@@ -14,12 +19,12 @@ public class TimerController : MonoBehaviour
     public bool isTimeOver = false;
     public bool isPaused = false;
     public Text bonusText;
-
     public Text objectsList;
 
     private PlayerPreferences playerPrefsScript;
     private ObjectsController objectsControllerScript;
     private AudioController audioControllerScript;
+    private LeaderboardController leaderboardControllerScript;
 
 
     // Start is called before the first frame update
@@ -30,6 +35,7 @@ public class TimerController : MonoBehaviour
         currentTime = memorizeTime;
         totalTime = 0;
 
+        leaderboardControllerScript = GameObject.Find("LeaderboardController").GetComponent<LeaderboardController>();
         playerPrefsScript = this.GetComponent<PlayerPreferences>();
         objectsControllerScript = this.GetComponent<ObjectsController>();
         audioControllerScript = this.GetComponent<AudioController>();
@@ -58,8 +64,13 @@ public class TimerController : MonoBehaviour
         if (objectsList.text.Trim().Length == 0)
         {
             playerPrefsScript.SaveScore(totalTime, SceneManager.GetActiveScene().name);
-        }
 
+            wonButton.gameObject.SetActive(true);
+
+            restartButton.gameObject.SetActive(false);
+            soundButton.gameObject.SetActive(false);
+            levelButton.gameObject.SetActive(false);
+        }
     }
 
     public void addTime(float timeToAdd)
@@ -76,5 +87,12 @@ public class TimerController : MonoBehaviour
         bonusText.text = "+ " + bonus;
 
         bonusText.GetComponent<Animation>().Play();
+    }
+
+    public void WonGame()
+    {
+        leaderboardControllerScript.updateOnlineHighscoreData(playerPrefsScript.getPlayerEmail(), totalTime, SceneManager.GetActiveScene().name);
+
+        SceneManager.LoadScene("Level Selection");
     }
 }

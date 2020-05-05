@@ -1,16 +1,17 @@
 FAZER
 	DESCOBRIR COMO MONETIZAR O JOGO
 
+	arrumar UI na tela de vitoria (esconder letter stack)
 
-
-
+	arrumar botao de salvar pro db (timer controller no Won Button)
+	carregar a pontuacao na leaderboard scene
 
 
 TALVEZ
 
 	Leaderboard
 
-	"barra superior"
+
 
 	pausar temporariamente se clicar e segurar na tela
 
@@ -19,13 +20,3 @@ TALVEZ
 	adicionar luz nas lampadas
 
 DONE
-	
-	Trocar sprites de letra
-
-	parar o tempo de contar depois que o jogo acaba (vitoria)
-
-	trocar cor de fundo tutorial
-
-	mostrar pontuacao na tela (tempo adicionado)
-
-	carregar fases se a anterior foi completada

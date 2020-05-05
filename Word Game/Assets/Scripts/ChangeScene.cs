@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    private PlayerPreferences playerPreferencesScript;
+
+    private void Start()
+    {
+        playerPreferencesScript = this.GetComponent<PlayerPreferences>();
+    }
+
     public void changeScene(string scene)
     {
         SceneManager.LoadScene(scene);

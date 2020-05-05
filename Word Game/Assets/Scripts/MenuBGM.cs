@@ -28,7 +28,7 @@ public class MenuBGM : MonoBehaviour
     {
         sceneName = SceneManager.GetActiveScene().name;
 
-        if (sceneName == "MainMenu" || sceneName == "Level Selection" || sceneName == "Tutorial")
+        if (sceneName == "MainMenu" || sceneName == "Level Selection" || sceneName == "Tutorial" || sceneName == "Leaderboard")
         {
             if(isPlayTime)
             {

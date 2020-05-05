@@ -17,6 +17,7 @@ TagManager:
   - 9
   - 10
   - music
+  - DestroyME
   layers:
   - Default
   - TransparentFX

@@ -7,12 +7,12 @@ public class Timer : MonoBehaviour
 {
     //Variables
     private TimerController timerControllerScript;
+    private ObjectsController objectsControllerScript;
 
     private float currentTime;
     private int minutes;
     private int seconds;
 
-    private ObjectsController objectsControllerScript;
 
     [SerializeField]
     private Text timer;
@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
     }
 
     //Method to display the decreasing time
-    private void DisplayTime()
+    public void DisplayTime()
     {
         if(currentTime >= 0)
         {
@@ -50,6 +50,5 @@ public class Timer : MonoBehaviour
             //Displays the time
             timer.text = minutes.ToString("00") + ":" + seconds.ToString("00");
         }
-        
     }
 }

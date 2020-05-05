@@ -39,7 +39,30 @@ public class PlayerPreferences : MonoBehaviour
 
     public void SaveScore(float value, string level)
     {
-        PlayerPrefs.SetFloat(level, value);
+        float previousScore = PlayerPrefs.GetFloat(level);
+
+        if(!CheckIfExists(level))
+        {
+            PlayerPrefs.SetFloat(level, value);
+        }
+
+        else if(previousScore > value)
+        {
+            PlayerPrefs.SetFloat(level, value);
+        }
     }
 
+    public void SavePlayerInfo(string name, string email)
+    {
+        PlayerPrefs.SetString("playerName", name);
+        PlayerPrefs.SetString("playerEmail", email);
+    }
+    public string getPlayerName()
+    {
+        return PlayerPrefs.GetString("playerName");
+    }
+    public string getPlayerEmail()
+    {
+        return PlayerPrefs.GetString("playerEmail");
+    }
 }
